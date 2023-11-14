@@ -1,68 +1,37 @@
+const Product = require('../models/productos');
 const express = require('express');
 const router = express.Router();
 
 
-const {
-    getProducts,
-    getProductsItem,
-    buscador,
-    filtro
-} = require('../controllers/mainController')
+
+const obtenerProductos = async () => {
+    try {
+        // Aquí puedes personalizar tu lógica para obtener productos desde tu base de datos
+        const productos = await Product.find().exec();
+        return productos;
+    } catch (error) {
+        console.error('Error al obtener productos:', error);
+        throw error;
+    }
+};
 
 //// ------------------- VISTAS DE LOS MÓDULOS -------------------- ////
 
 
-// ------------------- RUTA PARA MOSTRAR MAIN ------------------- //
-
-
-
-router.get('/', getProducts);
-router.get('/products/:page', getProducts);
-
-
-router.get('', getProducts);
-
-
-// ------------------- RUTA PARA MOSTRAR - "ACERCA DE" ------------------- //
-
-router.get('/main/about', (req, res) => {
-    res.render('about'); 
+// En tu archivo de ruta (por ejemplo, mainRoute.js)
+router.get('/', async (req, res) => {
+    try {
+        const products = await obtenerProductos(); // Asegúrate de tener una función para obtener tus productos
+        res.render('home', { products, user: req.user });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al cargar la página');
+    }
 });
 
-// ------------------- RUTA PARA MOSTRAR El CARRITO ------------------- //
-
-router.get('/main/carrito', async (req, res) => {
-    res.render('carrito')
-});
-
-// ------------------- RUTA PARA MOSTRAR El FORMULARIO DE COMPRA ------------------- //
-
-router.get('/main/formcCompra', async (req, res) => {
-    res.render('formcCompra')
-});
-
-// ------------------- RUTA PARA MOSTRAR LISTADO DE PRODUCTOS ------------------- //
-
-router.get('/main/listadoProductos', async (req, res) => {
-    res.render('listadoProductos')
-});
-
-// ------------------- RUTA PARA MOSTRAR PRODUCTO ------------------- //
-
-router.get('/main/:productId', getProductsItem);
-
-// ------------------- RUTA PARA MOSTRAR Y BUSCAR PRODUCTOS POR PALABRA CLAVE ------------------- //
-router.get('/buscar-por-keyword', buscador)
-
-
-// ------------------- RUTA PARA MOSTRAR Y BUSCAR PRODUCTOS POR FILTRO ------------------- //
-router.get('/filtro', filtro)
-
-// ------------------- RUTA PARA MOSTRAR LA PAGINA DE USUARIO ------------------- //
-
-router.get('/main/usuario', async (req, res) => {
-    res.render('usuario')
-});
 
 
 module.exports=router
+
+
+

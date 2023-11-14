@@ -138,10 +138,10 @@
                              <button class="btn btn-outline-none " type="submit">
                                 <i class="fas fa-user" style="background-color: white;"></i>                        
                                 <a href="/profile">Cuenta</a></button>
-                                <%if (user){%>
-                                    <%=user.username %>
+                                <% if (user) { %>
+                                    <%= user.username %>
                                     <li><a href="/auth/logout">Logout</a></li>
-
+                                
                                     <!-- ÍCONO Y TEXTO CARRITO -->
                                     <div class="categorias d-flex mb-2 mb-md-0">
                                         <li class="nav-item dropdown" style="list-style: none;">
@@ -154,10 +154,10 @@
                                             </a>
                                         </li>
                                     </div>
-                                <%}else{%>
-                        
+                                <% } else { %>
                                     <li><a href="/auth/login">Login</a></li>
-                                <%}%>
+                                <% } %>
+                                
                             
                             </li>  
                         </ul>  
