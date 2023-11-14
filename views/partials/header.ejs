@@ -112,7 +112,7 @@
 
 
 
-                <form class="d-flex flex-column flex-md-row justify-content-start">
+                <form class="d-flex flex-column align-items-md-start flex-md-row justify-content-start">
 
 
                     <!-- INPUT BÚSQUEDA -->
@@ -137,12 +137,10 @@
                           <li class="ms-auto" style="list-style: none;">
                              <!-- <button  class="btn btn-outline-none " type="submit">
                                 <i class="fas fa-user" style="background-color: white;"></i>                        
-
                                 <a style="text-decoration: none;color: black;" href="/profile">Login</a></button> -->
                                 <%if (user){%>
                                     <%=user.username %>
                                     <li><a style="text-decoration: none; color: black;" class="m-3" href="/auth/logout">Logout</a></li>
-
 
                                     <!-- ÍCONO Y TEXTO CARRITO -->
                                     <div class="categorias d-flex mb-2 mb-md-0">
