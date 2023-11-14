@@ -1,25 +1,36 @@
 const express = require('express')
-const rutasAuth = require('./routes/rutasAuth')
-const profileRutas = require('./routes/profile.router')
+//const Products = require('./models/productos')
 
 const passportSetup=require('./config/config')
 const mongoose=require('mongoose')
 const cookieSession =require('cookie-session');
 const passport = require('passport');
 
+const app = express()
+
 require('dotenv').config();
+require('express-async-errors')
 
 //----------------------------------------- TRAIGO LA DB
 
 const connectDb = require('./db/conexion')
 
+const rutasAuth = require('./routes/rutasAuth')
+const profileRutas = require('./routes/profile.router')
+const mainRoutes = require('./routes/mainRoute')
 
-const app = express()
+// Creo el middleware que me lee el json para que, después, lo traduzca el express.json()
+app.use(express.urlencoded({ extended: true}))
+
+// Creo el middleware que me transforma los json que me llegan desde los formularios a objeto
+app.use(express.json())
+
 
 
 //---------------------------------------- CONEXIÓN A LA DB
 
 const PORT = process.env.PORT || 3800
+const host = process.env.HOST
 
 connectDb()
 
@@ -44,18 +55,19 @@ app.use(passport.session({
   saveUninitialized:true
 }))
 
+
+
 //------------ RUTAS
+
 
 app.use('/auth',rutasAuth)
 app.use('/profile',profileRutas)
+app.use('/', mainRoutes)
 
 
-app.get('/', (req, res) => {
-    res.render('home',{user:req.user});
-});
 
-app.use('/', require('./routes/mainRoute'))
 
-app.listen(PORT, () =>{
+
+app.listen(PORT, host, () =>{
     console.log('Se conectó el servidor')
 })

@@ -192,6 +192,7 @@
             </div>
         </div>
     </nav>
+    
     <style>
         @media (max-width: 794px) and (min-width: 390px) {
             a.nav-link {
@@ -200,6 +201,73 @@
             }
         }
     </style>
+
+
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-start">
+            <% products.forEach(product => { %>
+            <div class="col mb-4">
+                <div class="card custom-card">
+                    <!-- Product image with background and shadow -->
+                    <div  class="image-container">
+                        <img class="card-img-top" src="<%= product.img %>" alt="<%= product.name %>" />
+                    </div>
+                    <!-- Product details-->
+                    <div class="card-body ">
+                      
+                            <!-- Title with larger font size -->
+                        <div class="miclase d-flex justify-content-between align-items-center ">
+                        <h5 class="fw-bolder" style="font-size: 1rem;">
+                            <a class="no_underline tamtyp" href="/main/<%= product._id %>"><%= product.name %></a>
+                        </h5>
+                        <p class="fw-bolder tamtyp"><%= '$' + product.price %></p>
+                        </div>
+
+                            <!-- Descripción del producto with smaller font size -->
+                            <% if (product.description) { %>
+                                <p class="flex-fill tamdes"><%= product.description %></p>
+                            <% } %>
+                            <!-- Estrellitas de rating verdes con el rating -->
+                            <div class="d-flex justify-content-start align-items-center text-success">
+                                <% for (let i = 0; i < 5; i++) { %>
+                                    <% if (i < Math.floor(product.rating)) { %>
+                                        <div class="bi-star-fill"></div>
+                                    <% } else if (i === Math.floor(product.rating) && (product.rating % 1) >= 0.5) { %>
+                                        <div class="bi-star-half"></div>
+                                    <% } else { %>
+                                        <div class="bi-star"></div>
+                                    <% } %>
+                                <% } %>
+                                (<%= product.rating %>)
+                            </div>
+                            <!-- Botón -->
+                            <div class="text-start mt-3">
+                                <button class="btn btn-outline-dark mt-auto btn-add-cart" href="#">Add to Cart</button>
+                            </div>
+                      
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+         <div class="row">
+    <!-- pagination -->
+    
+      
+  </div>
+  
+
+    </div>
+</section>
+
+
+
+
+
+
+
     
 
 
