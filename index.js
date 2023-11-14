@@ -20,6 +20,7 @@ const app = express()
 //---------------------------------------- CONEXIÓN A LA DB
 
 const PORT = process.env.PORT || 3800
+const host = process.env.HOST
 
 connectDb()
 
@@ -56,6 +57,6 @@ app.get('/', (req, res) => {
 
 app.use('/', require('./routes/mainRoute'))
 
-app.listen(PORT, () =>{
+app.listen(PORT, host, () =>{
     console.log('Se conectó el servidor')
 })
