@@ -132,20 +132,28 @@
 
 
                     <!-- ÍCONO Y TEXTO CUENTA -->
-                    <div class="mb-2 mb-md-0">
-                        <ul>
+                    <div class="mb-2 mb-md-0 d-flex">
+                        <ul class="list-unstyled d-inline-flex">
                           <li class="ms-auto" style="list-style: none;">
-                             <button class="btn btn-outline-none " type="submit">
+                             <!-- <button  class="btn btn-outline-none " type="submit">
                                 <i class="fas fa-user" style="background-color: white;"></i>                        
+<<<<<<< develop
                                 <a href="/profile">Cuenta</a></button>
                                 <% if (user) { %>
                                     <%= user.username %>
                                     <li><a href="/auth/logout">Logout</a></li>
                                 
+=======
+                                <a style="text-decoration: none;color: black;" href="/profile">Login</a></button> -->
+                                <%if (user){%>
+                                    <%=user.username %>
+                                    <li><a style="text-decoration: none; color: black;" class="m-3" href="/auth/logout">Logout</a></li>
+
+>>>>>>> main
                                     <!-- ÍCONO Y TEXTO CARRITO -->
                                     <div class="categorias d-flex mb-2 mb-md-0">
                                         <li class="nav-item dropdown" style="list-style: none;">
-                                            <a class="" aria-current="page" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <a  class="" aria-current="page" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <button class="btn btn-outline-none" type="submit">
                                                     <i class="fas fa-shopping-cart"></i>
                                                     Carrito
@@ -154,10 +162,17 @@
                                             </a>
                                         </li>
                                     </div>
+<<<<<<< develop
                                 <% } else { %>
                                     <li><a href="/auth/login">Login</a></li>
                                 <% } %>
                                 
+=======
+                                <%}else{%>
+                                    <i class="fas fa-user p-2 mt-1" style="background-color: white;"></i>
+                                    <li style="margin-top: 7px;"><a style="text-decoration: none; color: black;" href="/auth/login">Login</a></li>
+                                <%}%>
+>>>>>>> main
                             
                             </li>  
                         </ul>  
