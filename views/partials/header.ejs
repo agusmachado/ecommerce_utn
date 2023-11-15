@@ -29,20 +29,32 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
+<style>
+    @media only screen and (max-width: 767px) {
+       .num2,
+       .num1{display: none;}
+       
+    }
 
+ 
+    @media only screen and (min-width: 768px) and (max-width: 1199px) {
+     .num1{margin-left: 50px;}
+     .num2{display: none;}
+    }
+</style>
 <body>
     <!-- Nav superior verde -->
     <header style="background-color: #003D29; height: 5vh;">
 
         <ul class="nav justify-content-between">
-            <li class="nav-item mt-1" style="color: white; margin-left: 145px;">
-                <i class="bi bi-telephone">+02254414211</i>
+            <li class="nav-item mt-1 num1" style="color: white; margin-left: 145px;">
+                <i class="bi bi-telephone ">+02254414211</i>
             </li>
-            <li class="nav-item mt-1" style="color: white;">
+            <li class="nav-item mt-1 num2" style="color: white;">
                 <p>Obtenga un 50% de descuento || Compre ahora</p>
             </li>
 
-            <li class="nav-item dropdown ">
+            <li class="nav-item dropdown num3 ">
                 <a class="nav-link dropdown-toggle " style="text-decoration: none; color: white; margin-right: 130px; ;"
                     href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Español
