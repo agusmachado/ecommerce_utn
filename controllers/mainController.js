@@ -54,10 +54,6 @@ const obtenerProductoPorId = async (req, res) => {
 }
 
 module.exports = {
-    getProductsItem,
-    getProducts,
-    buscador,
-    filtro
+    obtenerProductosHome,
+    obtenerProductoPorId
 }
-
-
