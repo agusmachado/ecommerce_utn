@@ -1,0 +1,81 @@
+a {
+    text-decoration: none;
+  }
+  
+  .btn.btn-outline-dark.mt-auto {
+      height: 40px;
+      color:#003D29;
+      padding: 5px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      display: inline-block;
+      outline: none;
+      border: 2px solid #003D29;
+      background: white;
+      border-radius: 40px;
+       
+      
+    }
+    .btn.btn-outline-dark.mt-auto:hover {
+      background: #003D29; 
+      color: white;
+  }
+  
+   
+  
+    /* Agrega estilos para el fondo gris y el efecto de sombra */
+  .image-container {
+      background-color: #f3f4f6; /* Fondo gris */
+      padding: 10px; /* Espacio alrededor de la imagen */
+  }
+  
+  .custom-card {
+      border: none; 
+  }
+  
+  
+  /* Media query para pantallas pequeñas (menos de 767px) */
+  @media (max-width: 767px) {
+    .col.mb-4 {
+        width: 100%; /* Hacer que la tarjeta ocupe el 100% del ancho */
+        margin-right: 0; /* Eliminar el margen derecho para aprovechar completamente el espacio */
+        margin-bottom: 20px; /* Añadir un margen inferior para separar las tarjetas */
+    }
+  
+    /* Ajustes para miclase y sus elementos hijos */
+    .miclase {
+        flex-direction: column; /* Cambiar la dirección del flexbox a columna para que los elementos se apilen verticalmente */
+        align-items: center; /* Alinear los elementos al centro del contenedor */
+        text-align: center; /* Centrar el texto */
+    }
+  
+    .tamtyp{
+        margin-bottom: 10px; /* Añadir un espacio entre el título y el precio */
+        font-size: 1.7rem; /* Ajustar el tamaño de la fuente del título */
+    }
+  
+    
+    .tamdes {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+  
+  
+    .text-success {
+        margin-bottom: 10px; /* Añadir un espacio entre la calificación y el botón */
+    }
+  
+    /* Ajustes para el botón */
+    .btn.btn-outline-dark.mt-auto {
+      width: 100%;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* Ajusta el padding según tus necesidades */
+      padding: 10px;
+  }
+  
+  }
+  
+  

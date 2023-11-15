@@ -1,0 +1,150 @@
+/* Estilos para .color-options */
+.color-options {
+    padding: 8px; /* px-3 y py-2 equivalen a esto */
+    border-bottom: 1px solid #000; /* Agrega el color de borde deseado */
+}
+
+/* Estilos para .color-circle */
+.rojo, .verde, .gris, .azul, .negro, .rosa, .blanco, .marron{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Estilos para los círculos con gradientes */
+.rojo {
+    background-image: linear-gradient(to bottom, #E3544C 50%, #F7CCC9 50%);
+}
+
+.verde {
+    background-image: linear-gradient(to bottom, #AFBFAB 50%, #E7ECE6 50%);
+}
+
+.gris {
+    background-image: linear-gradient(to bottom, #F2F2F2 50%, #D2D3D4 50%);
+}
+
+.azul {
+    background-image: linear-gradient(to bottom, #30506C 50%, #C5CFD6 50%);
+}
+
+.negro {
+    background-image: linear-gradient(to bottom, #000000 50%, #000000 50%);
+}
+.rosa {
+    background-image: linear-gradient(to bottom, #FFC0CB 50%, #FFC0CB 50%);
+}
+.blanco {
+    background-image: linear-gradient(to bottom, #FFFFFF 50%, #FFFFFF 50%);
+    border: 1px solid #ddd; /* Agregar un borde gris claro */
+}
+
+.marron {
+    background-image: linear-gradient(to bottom, #964B00 50%, #964B00 50%);
+}
+
+
+a{
+    text-decoration: none; 
+    color: inherit;
+    text-decoration: underline;
+}
+
+/* Estilo contador  */
+
+.custom-counter {
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2; 
+    border-radius: 25px; 
+    padding: 5px 10px;
+    width: 7rem;
+}
+
+.custom-button {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    outline: none; 
+    color: #333; 
+    margin: 0 5px; 
+}
+.btn.btn-round {
+    height: 45px;
+    color: #fff;
+    padding: 5px 60px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+    border: 2px solid #003D29;
+    background: #003D29;
+    border-radius: 40px;
+    margin-right: 1rem;
+    
+  }
+
+  @media (max-width: 769px) {
+    .btn.btn-round {
+        margin-bottom: 1rem;
+    }
+}
+
+  
+
+  .btn.btn-roundcart {
+    height: 45px;
+    color: #003D29;
+    padding: 5px 50px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+    border: 2px solid #003D29;
+    border-radius: 40px; }
+
+
+.custom-input {
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    width: 30px; 
+    background-color: transparent; 
+    border-radius: 25px; 
+    margin: 0; 
+}
+
+.custom-message {
+    margin-left: 10px; 
+    color: #333; 
+}
+
+.naranja{
+    color: orange;
+    font-weight: bold;
+}
+
+.gray-background {
+    background-color: #f2f2f2; 
+    padding: 10px; 
+}
+
+/* Agrega negrita  a la ruta*/
+
+.breadcrumb-item.active {
+    font-weight: bold; 
+}
+
+/* Estilo para los íconos */
+.info-content i {
+    color: orange; 
+}
+
+/* Estilo para "Free Delivery" y "Return Delivery" */
+.info-content span {
+    font-weight: bold; 
+}

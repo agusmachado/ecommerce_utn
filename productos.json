@@ -1,0 +1,473 @@
+[
+        {
+            "name": "Auriculares BT500",
+            "price": 20.50,
+            "description": "Auriculares plegables livianos con vincha.",
+            "company": "Noga",
+            "rating": 4.0,
+            "img": "https://i.imgur.com/6d9XFt5.png Negro",
+            "images": [
+                "https://i.imgur.com/6d9XFt5.png",
+                "https://imgur.com/1EZFIJF.png",
+                "hhttps://imgur.com/WcYsgZg.png"
+            ],
+            "colors": [
+                {
+                    "name": "negro",
+                    "code": "negro",
+                    "img": "https://i.imgur.com/6d9XFt5.png"
+                },
+                {
+                    "name": "rojo",
+                    "code": "rojo",
+                    "img": "https://imgur.com/1EZFIJF.png"
+                },
+                {
+                    "name": "verde",
+                    "code": "verde",
+                    "img": "https://imgur.com/WcYsgZg.png"
+                }
+               
+            ]
+        },
+        {
+            "name": "Auriculares Bose GTX",
+            "price": 39.99,
+            "description": "Auriculares tipo vincha con excelente calidad de sonido.",
+            "company": "Bose",
+            "rating": 4.5,
+            "img": "https://imgur.com/6NUDorE.png",
+            "images": [ 
+                "https://imgur.com/6NUDorE.png",
+                "https://imgur.com/p2Z90mc.png ",
+                "https://imgur.com/OJJ7cZj.png "
+                
+            ],
+            "colors": [
+                {
+                    "name": "rosa",
+                    "code": "rosa",
+                    "img": "https://imgur.com/6NUDorE.png"
+                },
+                {
+                    "name": "azul",
+                    "code": "azul",
+                    "img": "https://imgur.com/p2Z90mc.png"
+                },
+                {
+                    "name": "gris",
+                    "code": "gris",
+                    "img": "https://imgur.com/OJJ7cZj.png"
+                }
+                
+            ]
+        },
+    
+    
+    
+     {
+            "name": "Auriculares Sony G200",
+            "price": 59.99,
+            "description": "Auriculares bluetooth con excelente sonido.",
+            "company": "Sony",
+            "rating": 5.0,
+            "img": "https://imgur.com/DeBXesY.png",
+            "images": [
+                "https://imgur.com/DeBXesY.png",
+                "https://imgur.com/M1VxOs6.png",
+                "https://imgur.com/bvTRNvU.png",
+                "https://imgur.com/mHaodft.png"
+            ],
+            "colors": [
+                {
+                    "name": "blanco",
+                    "code": "blanco",
+                    "img": "https://imgur.com/DeBXesY.png"
+                },
+                {
+                    "name": "marron",
+                    "code": "marron",
+                    "img": "https://imgur.com/M1VxOs6.png"
+                },
+                {
+                    "name": "negro",
+                    "code": "negro",
+                    "img": "https://imgur.com/bvTRNvU.png"
+                },
+                {
+                    "name": "rojo",
+                    "code": "rojo",
+                    "img": "https://imgur.com/mHaodft.png"
+                }
+            ]
+        },
+    
+    {
+            "name": "Auriculares Philips",
+            "price": 80.30,
+            "description": "Auriculares de excelente calidad y prestaciones unicas.",
+            "company": "Philips",
+            "rating": 5.0,
+            "img": "https://imgur.com/JSdxfjY.png",
+            "images": [
+                "https://imgur.com/JSdxfjY.png",
+                "https://imgur.com/p1G0LId.png",
+                "https://imgur.com/aLpWck1.png",
+                "https://imgur.com/nTEDnS0.png"
+            ],
+            "colors": [
+                {
+                    "name": "azul",
+                    "code": "azul",
+                    "img": "https://imgur.com/JSdxfjY.png"
+                },
+                {
+                    "name": "gris",
+                    "code": "gris",
+                    "img": "https://imgur.com/p1G0LId.png"
+                },
+                {
+                    "name": "negro",
+                    "code": "negro",
+                    "img": "https://imgur.com/aLpWck1.png"
+                },
+                {
+                    "name": "rosa",
+                    "code": "rosa",
+                    "img": "https://imgur.com/nTEDnS0.png"
+                }
+            ]
+        },
+    
+    
+    {
+            "name": "Auriculares Noga FTX",
+            "price": 69.99,
+            "description": "Auriculares plegables y portátiles para llevar la música a todas partes.",
+            "company": "Noga",
+            "rating": 4.5,
+            "img": "https://imgur.com/9TKW6DI.png",
+            "images": [
+                "https://imgur.com/9TKW6DI.png",        
+                "https://imgur.com/SgjbYeX.pmg",            
+                "https://imgur.com/b6Nx3uG.png"     
+    
+            ],
+            "colors": [
+                {
+                    "name": "azul",
+                    "code": "azul",
+                    "img": "https://imgur.com/9TKW6DI.png"
+                },
+                {
+                    "name": "blanco",
+                    "code": "blanco",
+                    "img": "https://imgur.com/SgjbYeX.pmg"
+                },
+                {
+                    "name": "rojo",
+                    "code": "rojo",
+                    "img": "https://imgur.com/b6Nx3uG.png"
+                }
+                
+            ]
+        },
+        
+        {
+            "name": "Auriculares Noga VA78",
+            "price": 39.99,
+            "description": "Auriculares plegables y de excelente prestaciones.",
+            "company": "Noga",
+            "rating": 4.5,
+            "img": "https://imgur.com/5N8TpnQ.png",
+            "images": [
+                "https://imgur.com/5N8TpnQ.png",
+                "https://imgur.com/0YEpRM3.png"
+                
+            ],
+            "colors": [
+                {
+                    "name": "blanco",
+                    "code": "blanco",
+                    "img": "https://imgur.com/5N8TpnQ.png"
+                },
+                {
+                    "name": "rojo",
+                    "code": "rojo",
+                    "img": "https://imgur.com/0YEpRM3.png"
+                }
+               
+            ]
+        },
+        
+        {
+            "name": "Auriculares Sennheiser",
+            "price": 39.99,
+            "description": "Auriculares plegables y con cancelacion de sonido.",
+            "company": "Sennheiser",
+            "rating": 3.5,
+            "img": "https://imgur.com/iQiCMjH.png",
+            "images": [
+                "https://imgur.com/iQiCMjH.png",
+                "https://imgur.com/m1NvTad.png",
+                "https://imgur.com/iUL2rYt.png"
+                
+            ],
+            "colors": [
+                {
+                    "name": "blanco",
+                    "code": "blanco",
+                    "img": "https://imgur.com/iQiCMjH.png"
+                },
+                {
+                    "name": "rosa",
+                    "code": "rosa",
+                    "img": "https://imgur.com/m1NvTad.png"
+                },
+                {
+                    "name": "verde",
+                    "code": "verde",
+                    "img": "https://imgur.com/iUL2rYt.png"
+                }
+              
+            ]
+        },
+        
+        {
+            "name": "Auriculares Sony RTX4",
+            "price": 59.99,
+            "description": "Auriculares Gamers, excelente confort y calidad",
+            "company": "Sony",
+            "rating": 5.0,
+            "img": "https://imgur.com/xz94qrh.png",
+            "images": [
+                "https://imgur.com/xz94qrh.png",
+                "https://imgur.com/7ftOYpW.png",
+                "https://imgur.com/nJfXiKn.png"
+              
+            ],
+            "colors": [
+                {
+                    "name": "blanco",
+                    "code": "blanco",
+                    "img": "https://imgur.com/xz94qrh.png"
+                },
+                {
+                    "name": "negro",
+                    "code": "negro",
+                    "img": "https://imgur.com/7ftOYpW.png"
+                },
+                {
+                    "name": "verde",
+                    "code": "verde",
+                    "img": "https://imgur.com/nJfXiKn.png"
+                }
+               
+            ]
+        },
+        
+        {
+            "name": "Auriculares Philips 4A",
+            "price": 99.99,
+            "description": "Auriculares Gamers con cancelacion de sonido.",
+            "company": "Philips",
+            "rating": 5.0,
+            "img": "https://imgur.com/7ftOYpW.png",
+            "images": [
+                "https://imgur.com/7ftOYpW.png",
+                "https://imgur.com/nJfXiKn.png"
+                
+            ],
+            "colors": [
+                {
+                    "name": "negro",
+                    "code": "negro",
+                    "img": "https://imgur.com/7ftOYpW.png"
+                },
+                {
+                    "name": "verde",
+                    "code": "verde",
+                    "img": "https://imgur.com/nJfXiKn.png"
+                }
+              
+            ]
+        },
+        
+        {
+            "name": "Auriculares Bose Pro",
+            "price": 19.99,
+            "description": "Auriculares plegables y portátiles para llevar la música a todas partes.",
+            "company": "Bose",
+            "rating": 4.0,
+            "img": "https://imgur.com/XUGGbrK.png",
+            "images": [
+                "https://imgur.com/XUGGbrK.png",
+                "https://imgur.com/yWWx4Hw"
+               
+            ],
+            "colors": [
+                {
+                    "name": "azul",
+                    "code": "azul",
+                    "img": "https://imgur.com/XUGGbrK.png"
+                },
+                {
+                    "name": "rojo",
+                    "code": "rojo",
+                    "img": "https://imgur.com/yWWx4Hw"
+                }
+         
+            ]
+        },
+        
+        {
+            "name": "Auriculares Noga Beats",
+            "price": 15.99,
+            "description": "Auriculares para correr PRO.",
+            "company": "Noga",
+            "rating": 3.0,
+            "img": "https://imgur.com/RLDlf8q.png",
+            "images": [
+                "https://imgur.com/RLDlf8q.png",
+                "https://imgur.com/UVXaywp.png"
+              
+            ],
+            "colors": [
+                {
+                    "name": "blanco",
+                    "code": "blanco",
+                    "img": "https://imgur.com/RLDlf8q.png"
+                },
+                {
+                    "name": "gris",
+                    "code": "gris",
+                    "img": "https://imgur.com/UVXaywp.png"
+                }
+             
+            ]
+        },
+        
+        {
+            "name": "Auriculares Sennheiser P5",
+            "price": 39.99,
+            "description": "Auriculares inalambricos con graves altos.",
+            "company": "Sennheiser",
+            "rating": 3.5,
+            "img": "https://imgur.com/g3DdH0A.png",
+            "images": [
+                "https://imgur.com/g3DdH0A.png",
+                "https://imgur.com/cH7B6A2.png",
+                "https://imgur.com/P5qz1Qc.png"
+                
+            ],
+            "colors": [
+                {
+                    "name": "azul",
+                    "code": "azul",
+                    "img": "https://imgur.com/g3DdH0A.png"
+                },
+                {
+                    "name": "blanco",
+                    "code": "blanco",
+                    "img": "https://imgur.com/cH7B6A2.png"
+                },
+                {
+                    "name": "rojo",
+                    "code": "rojo",
+                    "img": "https://imgur.com/P5qz1Qc.png"
+                }
+               
+            ]
+        },
+        
+        {
+            "name": "Auriculares Sony F510",
+            "price": 79.99,
+            "description": "Auriculares Pro con cancelacion de sonido.",
+            "company": "Sony",
+            "rating": 5.0,
+            "img": "https://imgur.com/9U6hxXf.png",
+            "images": [
+                "https://imgur.com/9U6hxXf.png",
+                "https://imgur.com/mi6NVXj.png"
+            
+            ],
+            "colors": [
+                {
+                    "name": "blanco",
+                    "code": "blanco",
+                    "img": "https://imgur.com/9U6hxXf.png"
+                },
+                {
+                    "name": "negro",
+                    "code": "negro",
+                    "img": "https://imgur.com/mi6NVXj.png"
+                }
+                
+            ]
+        },
+        
+        {
+            "name": "Auriculares Sennheiser",
+            "price": 59.50,
+            "description": "Auriculares con almohadilla super comfortable.",
+            "company": "Sennheiser",
+            "rating": 4.0,
+            "img": "https://imgur.com/xviMay6.png",
+            "images": [
+                "https://imgur.com/xviMay6.png",
+                "https://imgur.com/mM1vPm1.png"
+    
+            ],
+            "colors": [
+                {
+                    "name": "azul",
+                    "code": "azul",
+                    "img": "https://imgur.com/xviMay6.png"
+                },
+                {
+                    "name": "gris",
+                    "code": "gris",
+                    "img": "https://imgur.com/mM1vPm1.png"
+                }
+                
+            ]
+        },
+        
+        {
+            "name": "Auriculares Bose U5",
+            "price": 39.99,
+            "description": "Auriculares portátiles para llevar la música a todas partes.",
+            "company": "Bose",
+            "rating": 5.0,
+            "img": "https://imgur.com/2FZzfSW.png",
+            "images": [
+                "https://imgur.com/2FZzfSW.png",
+                "https://imgur.com/t8x8xj6.png",
+                "https://imgur.com/1yOoevN.png",
+                "https://imgur.com/zOOlsWN.png"
+            ],
+            "colors": [
+                {
+                    "name": "azul",
+                    "code": "azul",
+                    "img": "https://imgur.com/2FZzfSW.png"
+                },
+                {
+                    "name": "rojo",
+                    "code": "rojo",
+                    "img": "https://imgur.com/t8x8xj6.png"
+                },
+                {
+                    "name": "rosa",
+                    "code": "rosa",
+                    "img": "https://imgur.com/1yOoevN.png"
+                },
+                {
+                    "name": "verde",
+                    "code": "verde",
+                    "img": "https://imgur.com/zOOlsWN.png"
+                }
+            ]
+        }
+        ]
