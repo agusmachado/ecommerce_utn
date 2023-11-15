@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <%- include('./partials/header.ejs') %> 
-
+<%- include('./partials/header.ejs') %> 
 
     <header class=" py-2">
 
@@ -192,6 +183,7 @@
             </div>
         </div>
     </nav>
+    
     <style>
         @media (max-width: 794px) and (min-width: 390px) {
             a.nav-link {
@@ -200,6 +192,195 @@
             }
         }
     </style>
+
+
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-start">
+            <% products.forEach(product => { %>
+            <div class="col mb-4">
+                <div class="card custom-card">
+                    <!-- Product image with background and shadow -->
+                    <div  class="image-container">
+                        <img class="card-img-top" src="<%= product.img %>" alt="<%= product.name %>" />
+                    </div>
+                    <!-- Product details-->
+                    <div class="card-body ">
+                      
+                            <!-- Title with larger font size -->
+                        <div class="miclase d-flex justify-content-between align-items-center ">
+                        <h5 class="fw-bolder" style="font-size: 1rem;">
+                            <a class="no_underline tamtyp" href="/product/<%= product._id %>"><%= product.name %></a>
+                        </h5>
+                        <p class="fw-bolder tamtyp"><%= '$' + product.price %></p>
+                        </div>
+
+                            <!-- Descripción del producto with smaller font size -->
+                            <% if (product.description) { %>
+                                <p class="flex-fill tamdes"><%= product.description %></p>
+                            <% } %>
+                            <!-- Estrellitas de rating verdes con el rating -->
+                            <div class="d-flex justify-content-start align-items-center text-success">
+                                <% for (let i = 0; i < 5; i++) { %>
+                                    <% if (i < Math.floor(product.rating)) { %>
+                                        <div class="bi-star-fill"></div>
+                                    <% } else if (i === Math.floor(product.rating) && (product.rating % 1) >= 0.5) { %>
+                                        <div class="bi-star-half"></div>
+                                    <% } else { %>
+                                        <div class="bi-star"></div>
+                                    <% } %>
+                                <% } %>
+                                (<%= product.rating %>)
+                            </div>
+                            <!-- Botón -->
+                            <div class="text-start mt-3">
+                                <button class="btn btn-outline-dark mt-auto btn-add-cart" href="#">Agregar al carrito</button>
+                            </div>
+                      
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+         <div class="row">
+    <!-- pagination -->
+    <% if(pages > 0) { %> <!-- show pagination if there is pages -->
+        <nav class="mx-auto">
+          <ul class="pagination">
+            <!-- FIRST ITEM -->
+            <% if(current == 1) { %>
+              <li class="page-item disabled">
+                <a class="page-link" href="#">First</a>
+              </li>
+            <% } else { %>
+              <li class="page-item">
+                <a class="page-link" href="/products/1">First</a>
+              </li>
+            <% } %>
+  
+            <!-- ITEMS  -->
+            <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+            <% if(i !== 1) { %>
+              <li class="page-item disabled">
+                <a class="page-link" href="#">...</a>
+              </li>
+            <% } %>
+            <% for(; i <= (Number(current) + 4) && i <= pages; i++) { %>
+              <% if(i == current) { %>
+                <li class="page-item active">
+                  <a class="page-link" href="<%= i %>">
+                    <%= i %>
+                  </a>
+                </li>
+              <% } else { %>
+                <li class="page-item">
+                  <a class="page-link" href="/products/<%= i %>">
+                    <%= i %>
+                  </a>
+                </li>
+              <% } %>
+              <% if (i == Number(current) + 4 && i < pages) { %>
+                 <li class="page-item disabled">
+                   <a class="page-link" href="#">...</a>
+                 </li>
+              <% } %>
+            <% } %>
+  
+            <!-- LAST ITEM -->
+            <% if(current == pages) { %>
+              <li class="page-item disabled">
+                <a class="page-link" href="#">
+                  Last
+                </a>
+              </li>
+            <% } else { %>
+              <li class="page-item">
+                <a class="page-link" href="/products/<%= pages %>">
+                  Last
+                </a>
+              </li>
+            <% } %>
+          </ul>
+        </nav>
+      <% } %>
+      
+  </div>
+    </div>
+
+
+
+    <h1 class="text-center">Productos mas vendidos</h1>
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <% let productsPerSlide = 4; %>
+            <% for (let i = 0; i < products.length; i += productsPerSlide) { %>
+                <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
+                    <div class="container px-4 px-lg-5 mt-5">
+                        <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-start">
+                            <% for (let j = i; j < Math.min(i + productsPerSlide, products.length); j++) { %>
+                                <div class="col mb-4">
+                                    <div class="card custom-card">
+                                        <!-- Product image with background and shadow -->
+                                        <div class="image-container">
+                                            <img class="card-img-top" src="<%= products[j].img %>" alt="<%= products[j].name %>" />
+                                        </div>
+                                        <!-- Product details-->
+                                        <div class="card-body">
+                                            <!-- Title with larger font size -->
+                                            <div class="miclase d-flex justify-content-between align-items-center">
+                                                <h5 class="fw-bolder" style="font-size: 1rem;">
+                                                    <a class="no_underline tamtyp" href="/main/<%= products[j]._id %>"><%= products[j].name %></a>
+                                                </h5>
+                                                <p class="fw-bolder tamtyp"><%= '$' + products[j].price %></p>
+                                            </div>
+                                            <!-- Descripción del producto with smaller font size -->
+                                            <% if (products[j].description) { %>
+                                                <p class="flex-fill tamdes"><%= products[j].description %></p>
+                                            <% } %>
+                                            <!-- Estrellitas de rating verdes con el rating -->
+                                            <div class="d-flex justify-content-start align-items-center text-success">
+                                                <% for (let k = 0; k < 5; k++) { %>
+                                                    <% if (k < Math.floor(products[j].rating)) { %>
+                                                        <div class="bi-star-fill"></div>
+                                                    <% } else if (k === Math.floor(products[j].rating) && (products[j].rating % 1) >= 0.5) { %>
+                                                        <div class="bi-star-half"></div>
+                                                    <% } else { %>
+                                                        <div class="bi-star"></div>
+                                                    <% } %>
+                                                <% } %>
+                                                (<%= products[j].rating %>)
+                                            </div>
+                                            <!-- Botón -->
+                                            <div class="text-start mt-3">
+                                                <a class="btn btn-outline-dark mt-auto" href="#">Add to Cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+
+
+
+
+
     
 
 
@@ -210,6 +391,5 @@
     <%- include('./partials/footer.ejs') %> 
 </body>
 
-<script src="/public/js/producto.js"></script>
 
 </html>
