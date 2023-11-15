@@ -24,4 +24,6 @@ router.get('/product/:productId', obtenerProductoPorId)
 
 
 
+
+
 module.exports=router
