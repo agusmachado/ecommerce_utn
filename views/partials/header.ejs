@@ -71,9 +71,8 @@
 
 
 
-
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg  " style="height: 100px; ">
+    <nav class="navbar navbar-expand-lg  " style="height: 10vh; ">
         <div class="container px-4 px-lg-5 ">
             <a class="navbar-brand" href="/">E-Commerce UTN</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -100,12 +99,7 @@
                         </li>
                     </div>
 
-                    <!-- OFERTAS -->
-                    <div class="ofertas">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Ofertas</a>
-                        </li>
-                    </div>
+                
 
                     <!-- NUEVO -->
                     <div class="nuevo">
@@ -123,28 +117,23 @@
                 </ul>
 
 
-
-                <form class="d-flex flex-column align-items-md-start flex-md-row justify-content-start">
-
-
+                
+                <form class="d-flex flex-column align-items-md-start flex-md-row justify-content-start ml-10" action="/buscar-por-keyword" method="GET">
                     <!-- INPUT BÚSQUEDA -->
                     <div class="buscar">
-                        <div class="input-group position-relative" >
-                            <input type="text" class="form-control" placeholder="Buscar" aria-label="Buscar"
-                                aria-describedby="basic-addon2">
-
-                            <!-- <button type="button" style="border: none; background-color:white;" class="nombredelaclase">
-                                    <span class="bi bi-search"  aria-hidden="true"></span> 
-                                  </button> -->
-                            <span class="input-group-text   " id="basic-addon2" style="background-color: white; cursor: pointer; border: none; position: absolute; right: 1px; top: 5px;">
-                                    <i class="fas fa-search "></i>
-                                </span>
+                        <div class="input-group position-relative pe-5">
+                            <input type="text" class="form-control rounded-0" name="keyword" placeholder="Buscar" aria-label="Buscar" aria-describedby="basic-addon2">
+                            <button type="submit" class="input-group-text bg-white border-0" id="basic-addon2">
+                                <i class="fas fa-search"></i>
+                            </button>
                         </div>
                     </div>
+                </form>
+                
 
 
                     <!-- ÍCONO Y TEXTO CUENTA -->
-                    <div class="mb-2 mb-md-0 d-flex">
+                    <div class="mb-2 mb-md-0 d-flex ml-10">
                         <ul class="list-unstyled d-inline-flex">
                           <li class="ms-auto" style="list-style: none;">
                              <!-- <button  class="btn btn-outline-none " type="submit">
@@ -158,9 +147,9 @@
                                     <div class="categorias d-flex mb-2 mb-md-0">
                                         <li class="nav-item dropdown" style="list-style: none;">
                                             <a  class="" aria-current="page" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <button class="btn btn-outline-none" type="submit">
+                                                <button class="btn btn-outline-none">
                                                     <i class="fas fa-shopping-cart"></i>
-                                                    Carrito
+                                                    <a href="/cart">Ir al carrito</a>
                                                     <!-- <span class="badge bg-dark text-white ms-1 rounded-pill">0</span> -->
                                                 </button>
                                             </a>
@@ -178,7 +167,7 @@
 
 
                     
-                </form>
+                
             </div>
         </div>
     </nav>   

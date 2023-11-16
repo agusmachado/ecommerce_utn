@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('./partials/header.ejs') %> 
+
+<h1>Soy el carrito</h1>
+
+
+<% cartItems.forEach(item => { %>
+    <div class="cart-item">
+  <!--     <img src="<%= item.img %>" alt="<%= item.name %>" /> -->
+      <h2><%= item.name %></h2>
+      <p>Precio: $<%= item.price %></p>
+      <p>Cantidad: <%= item.amount %></p>
+      <p>Total: $<%= item.amount * item.price %></p>
+      <a href="/removeFromCart/<%= item._id %>">Eliminar</a>
+    </div>
+  <% }); %>
+
+
+
+    <%- include('./partials/footer.ejs') %> 
+</body>
+</html>
