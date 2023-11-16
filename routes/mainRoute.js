@@ -101,4 +101,31 @@ router.get('/cart', async (req, res) => {
   });
 
 
+
+// Ruta para eliminar un producto del carrito
+router.delete('/removeFromCart/:productId', async (req, res) => {
+    const productId = req.params.productId;
+    console.log(productId);
+  
+    try {
+      // Elimina el producto del carrito utilizando el ID
+      const removedProduct = await Cart.findByIdAndDelete(productId);
+      console.log(removedProduct);
+  
+      if (!removedProduct) {
+        return res.status(404).json({ mensaje: "Producto no encontrado en el carrito" });
+      }
+  
+      // Devuelve un mensaje JSON indicando que la eliminación fue exitosa
+      res.json({ mensaje: "Producto eliminado del carrito" });
+  
+    } catch (error) {
+      console.error(error);
+  
+      // Si hay un error, responde con un mensaje de error
+      res.status(500).json({ mensaje: "Error en el servidor al eliminar producto del carrito" });
+    }
+  });
+
+
 module.exports=router

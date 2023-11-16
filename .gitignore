@@ -1,3 +1,5 @@
 /node_modules
 .env
 productos.json
+
+mongodb+srv://ivanleonnel:znZttGQFN7qri6eF@cluster0.xq96ayv.mongodb.net/?retryWrites=true&w=majority+

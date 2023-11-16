@@ -205,7 +205,11 @@
                                 <form class="addToCartForm" id="addToCartForm_<%= product._id %>">
                                     <input type="hidden" name="productId" value="<%= product._id %>">
                                     <button type="button" class="btn btn-outline-dark mt-auto btn-add-cart" data-product-id="<%= product._id %>">Agregar al carrito</button>
-                                </form>                               
+                                </form>  
+                                <form class="addToCartForm" id="addToCartForm_<%= product._id %>">
+                                    <input type="hidden" name="productId" value="<%= product._id %>">
+                                    <button type="button" class="addToCartButton" data-product-id="<%= product._id %>">Add to Cart</button>
+                                </form>                             
                             </div>
                     </div>
                 </div>
@@ -325,6 +329,8 @@
                                             <div class="text-start mt-3">
                                                 <a class="btn btn-outline-dark mt-auto" href="#">Add to Cart</a>
                                             </div>
+                                            <!-- Formulario con AJAX -->
+    
                                         </div>
                                     </div>
                                 </div>
@@ -368,46 +374,49 @@
      });
      
      </script>
-    <!-- Script para manejar el envío del formulario con AJAX -->
-    <script>
-        // Espera a que el DOM esté completamente cargado
-document.addEventListener("DOMContentLoaded", function () {
-    // Obtén todos los botones con la clase 'btn-add-cart'
-    const addToCartButtons = document.querySelectorAll('.btn-add-cart');
-
-    // Itera sobre cada botón
-    addToCartButtons.forEach(button => {
+<!-- Script para manejar el envío del formulario con AJAX -->
+<script>
+    // Espera a que el DOM esté completamente cargado
+    document.addEventListener("DOMContentLoaded", function () {
+      // Obtén todos los botones con la clase 'addToCartButton'
+      const addToCartButtons = document.querySelectorAll('.addToCartButton');
+  
+      // Itera sobre cada botón
+      addToCartButtons.forEach(button => {
         // Agrega un evento de clic al botón
         button.addEventListener('click', function () {
-            // Obtén el valor del atributo data-product-id
-            const productId = button.dataset.productId;
-
-            // Realiza una solicitud AJAX al servidor
-            addToCart(productId);
+          // Obtén el formulario actual asociado con el botón
+          const currentForm = button.closest('form');
+  
+          // Obtén el valor del campo productId del formulario actual
+          const productId = currentForm.querySelector('[name="productId"]').value;
+  
+          // Realiza una solicitud AJAX al servidor
+          addToCart(productId);
         });
+      });
     });
-});
-
-async function addToCart(productId) {
-    try {
+  
+    async function addToCart(productId) {
+      try {
         const response = await fetch(`/addToCart/${productId}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
         });
-
+  
         const data = await response.json();
         console.log(data);
-
+  
         // Puedes agregar lógica adicional aquí, como actualizar la UI si es necesario
-
-    } catch (error) {
+  
+      } catch (error) {
         console.error('Error al agregar producto al carrito:', error);
+      }
     }
-}
-
-      </script>
+  </script>
+  
     
 
     <%- include('./partials/footer.ejs') %> 
