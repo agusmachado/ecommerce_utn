@@ -9,7 +9,8 @@ const {
     obtenerProductoPorId,
     buscador,
     filtroPrecios,
-    filtroGeneral
+    filtroGeneral,
+    paginaCarrito
 } = require('../controllers/mainController')
 
 
@@ -33,27 +34,13 @@ router.get('/buscar-por-keyword', buscador)
  
 router.get('/search-by-price', filtroPrecios);
 
+// ------------------- RUTA PARA BUSCR SEGÚN DIFERENTES CRITERIOS ------------------- //
 
-
-
-
-// Ruta para buscar productos según diferentes criterios
 router.get('/filtro', filtroGeneral)
 
+// ------------------- RUTA PARA MOSTRAR LA PÁGINA DEL CARRITO ------------------- //
 
-// Ruta para mostrar la página del carrito
-router.get('/cart', async (req, res) => {
-    try {
-      // Aquí puedes obtener los productos en el carrito desde la base de datos
-      // Por ejemplo, si estás utilizando el modelo Cart:
-      const cartItems = await Cart.find();
-  
-      res.render('cart', { cartItems, user: req.user }); // Renderiza la página del carrito con los productos
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ mensaje: 'Error en el servidor' });
-    }
-  });
+router.get('/cart', paginaCarrito);
   
   
   // Ajusta la ruta para incluir el parámetro productId
