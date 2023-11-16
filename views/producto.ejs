@@ -7,10 +7,10 @@
     <div class="row mt-5">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Electronics</a></li>
+                <li class="breadcrumb-item"><a href="#">Electrónica</a></li>
                 <li class="breadcrumb-item"><a href="#">Audio</a></li>
                 <li class="breadcrumb-item"><a href="#">Headphones</a></li>
-                <li class="breadcrumb-item"><a href="#">Shop Headphones by type</a></li>
+                <li class="breadcrumb-item"><a href="#">Comprar</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Airpods-max</li>
             </ol>
         </nav>
@@ -52,11 +52,11 @@
                     <h2><%= '$' + product.price %></h2>
                 </div>
                 <div class=" mb-4 white-space: nowrap;">
-                    <p>suggested payments with 6 months special financing</p>
+                    <p>Financiación a 6 meses!</p>
                 </div>
             </div>
             <!-- Columna para detalles (precio, color, etc.) -->
-            <h5 class="mt-2 mb-2 px-3 py-2">Choose a Color</h5>
+            <h5 class="mt-2 mb-2 px-3 py-2">Elegir color</h5>
 
 <div class="color-options px-3 py-2 border-bottom">
 <% product.colors.forEach(color => { %>
@@ -73,15 +73,14 @@
                     <input type="number" class="custom-input text-center" id="quantity" value="1" readonly>
                     <button class="custom-button" id="increment">+</button>
                 </div>
-                <p class="custom-message ml-2">Only <span class="naranja">12 items</span> left!<br> Don't miss it
+                <p class="custom-message ml-2">Quedan solo <span class="naranja">12 items</span> <br> No te los pierdas!
                 </p>
             </div>
 
             <!-- Botones buy y add to cart -->
             <div class="mt-1 mb-1 px-3 py-1 mt-4">
-                <button type="button" class="btn mr-4 mr-md-4 mb-md-0  btn-primary btn-round ">Buy Now</button>
-                <button type="button" class="btn ml-2 ml-md-4 mb-md-0  btn-outline-primary btn-roundcart ">Add to
-                    Cart</button>
+                <button type="button" class="btn mr-4 mr-md-4 mb-md-0  btn-primary btn-round " ><a href="/formulario">Comprar Ahora</a> </button>
+                <button type="button" class="btn ml-2 ml-md-4 mb-md-0  btn-outline-primary btn-roundcart ">Agregar al carrito</button>
             </div>
 
 
@@ -90,15 +89,15 @@
                 <div class="col ">
                     <div class="col-md-8 border px-3 py-2 ">
                         <div class="info-content">
-                            <i class="fa fa-truck"></i> <span>Free Delivery</span><br>
-                            <a href="#">Enter your Postal Code for Delivery Availability</a>
+                            <i class="fa fa-truck"></i> <span>Envío gratis</span><br>
+                            <a href="#">Ingresá tu Código Postal</a>
                         </div>
                     </div>
                     <div class="col-md-8 border px-3 py-2 ">
                         <div class="info-content">
-                            <i class="bi bi-archive"></i> <span>Return Delivery</span>
+                            <i class="bi bi-archive"></i> <span>Devolución</span>
                             <br>
-                            <p>Free 30 days Delivery Returns.<a href="#">Details</a></p>
+                            <p>Devoluciones sin cargo por 30 días.<a href="#">Detalles</a></p>
                         </div>
                     </div>
                 </div>
