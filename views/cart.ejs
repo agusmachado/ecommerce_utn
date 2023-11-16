@@ -10,19 +10,50 @@
 
 <h1>Soy el carrito</h1>
 
-
-<% cartItems.forEach(item => { %>
-    <div class="cart-item">
-  <!--     <img src="<%= item.img %>" alt="<%= item.name %>" /> -->
+   <!-- Mostrar los productos en el carrito -->
+   <% cartItems.forEach(item => { %>
+    <div class="cart-item" id="cartItem_<%= item._id %>">
       <h2><%= item.name %></h2>
       <p>Precio: $<%= item.price %></p>
       <p>Cantidad: <%= item.amount %></p>
       <p>Total: $<%= item.amount * item.price %></p>
-      <a href="/removeFromCart/<%= item._id %>">Eliminar</a>
+      <a href="#" class="remove-from-cart" data-product-id="<%= item._id %>">Eliminar</a>
     </div>
   <% }); %>
-
-
+  
+  <!-- Script para manejar la eliminación de productos del carrito -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const removeButtons = document.querySelectorAll('.remove-from-cart');
+  
+      removeButtons.forEach(button => {
+        button.addEventListener('click', async (event) => {
+          event.preventDefault();
+          const productId = button.dataset.productId;
+  
+          try {
+            const response = await fetch(`/removeFromCart/${productId}`, {
+              method: 'DELETE',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            });
+            const data = await response.json();
+            console.log(data);
+  
+            // Verifica si la eliminación fue exitosa antes de recargar la página
+            if (response.ok) {
+              // Recarga la página después de la eliminación exitosa
+              window.location.reload();
+            }
+  
+          } catch (error) {
+            console.error('Error al eliminar producto del carrito:', error);
+          }
+        });
+      });
+    });
+  </script>
 
     <%- include('./partials/footer.ejs') %> 
 </body>
