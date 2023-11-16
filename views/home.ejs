@@ -176,11 +176,7 @@
                                         </div>
                                         <!-- Botón -->
                                         <div class="text-start mt-3">
-                                            <!-- Formulario con AJAX -->
-                                            <!-- <form class="addToCartForm" id="addToCartForm_<%= product._id %>">
-                                    <input type="hidden" name="productId" value="<%= product._id %>">
-                                    <button type="button" class="btn btn-outline-dark mt-auto btn-add-cart" data-product-id="<%= product._id %>">Agregar al carrito</button> -->
-                                            </form>
+                                            <!-- Formulario con AJAX -->                                           
                                             <form class="addToCartForm" id="addToCartForm_<%= product._id %>">
                                                 <input type="hidden" name="productId" value="<%= product._id %>">
                                                 <button type="button"
@@ -261,77 +257,82 @@
             </div>
         </div>
 
+        <!-- PAGINADOR -->
 
+       
+     <!-- CARROUSEL -->
 
         <h1 class="text-center mt-4">Productos mas vendidos</h1>
 
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <% let productsPerSlide=4; %>
-                    <% for (let i=0; i < products.length; i +=productsPerSlide) { %>
-                        <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
-                            <div class="container px-4 px-lg-5 mt-5">
-                                <div
-                                    class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-start">
-                                    <% for (let j=i; j < Math.min(i + productsPerSlide, products.length); j++) { %>
-                                        <div class="col mb-4">
-                                            <div class="card custom-card">
-                                                <!-- Product image with background and shadow -->
-                                                <div class="image-container">
-                                                    <img class="card-img-top" src="<%= products[j].img %>"
-                                                        alt="<%= products[j].name %>" />
+                <% let productsPerSlide = 4; %>
+                <% for (let i = 0; i < products.length; i += productsPerSlide) { %>
+                    <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
+                        <div class="container px-4 px-lg-5 mt-5">
+                            <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-start">
+                                <% for (let j = i; j < Math.min(i + productsPerSlide, products.length); j++) { %>
+                                    <% const carouselProduct = products[j]; %>
+                                    <div class="col mb-4">
+                                        <div class="card custom-card">
+                                            <!-- Product image with background and shadow -->
+                                            <div class="image-container">
+                                                <img class="card-img-top" src="<%= carouselProduct.img %>"
+                                                    alt="<%= carouselProduct.name %>" />
+                                            </div>
+                                            <!-- Product details-->
+                                            <div class="card-body">
+                                                <!-- Title with larger font size -->
+                                                <div class="miclase d-flex justify-content-between align-items-center">
+                                                    <h5 class="fw-bolder" style="font-size: 1rem;">
+                                                        <a class="no_underline tamtyp"
+                                                            href="/main/<%= carouselProduct._id %>">
+                                                            <%= carouselProduct.name %>
+                                                        </a>
+                                                    </h5>
+                                                    <p class="fw-bolder tamtyp">
+                                                        <%= '$' + carouselProduct.price %>
+                                                    </p>
                                                 </div>
-                                                <!-- Product details-->
-                                                <div class="card-body">
-                                                    <!-- Title with larger font size -->
-                                                    <div
-                                                        class="miclase d-flex justify-content-between align-items-center">
-                                                        <h5 class="fw-bolder" style="font-size: 1rem;">
-                                                            <a class="no_underline tamtyp"
-                                                                href="/main/<%= products[j]._id %>">
-                                                                <%= products[j].name %>
-                                                            </a>
-                                                        </h5>
-                                                        <p class="fw-bolder tamtyp">
-                                                            <%= '$' + products[j].price %>
-                                                        </p>
-                                                    </div>
-                                                    <!-- Descripción del producto with smaller font size -->
-                                                    <% if (products[j].description) { %>
-                                                        <p class="flex-fill tamdes">
-                                                            <%= products[j].description %>
-                                                        </p>
+                                                <!-- Descripción del producto with smaller font size -->
+                                                <% if (carouselProduct.description) { %>
+                                                    <p class="flex-fill tamdes">
+                                                        <%= carouselProduct.description %>
+                                                    </p>
+                                                <% } %>
+                                                <!-- Estrellitas de rating verdes con el rating -->
+                                                <div
+                                                    class="d-flex justify-content-start align-items-center text-success">
+                                                    <% for (let k = 0; k < 5; k++) { %>
+                                                        <% if (k < Math.floor(carouselProduct.rating)) { %>
+                                                            <div class="bi-star-fill"></div>
+                                                        <% } else if (k === Math.floor(carouselProduct.rating) && (carouselProduct.rating % 1) >= 0.5) { %>
+                                                            <div class="bi-star-half"></div>
+                                                        <% } else { %>
+                                                            <div class="bi-star"></div>
                                                         <% } %>
-                                                            <!-- Estrellitas de rating verdes con el rating -->
-                                                            <div
-                                                                class="d-flex justify-content-start align-items-center text-success">
-                                                                <% for (let k=0; k < 5; k++) { %>
-                                                                    <% if (k < Math.floor(products[j].rating)) { %>
-                                                                        <div class="bi-star-fill"></div>
-                                                                        <% } else if (k===Math.floor(products[j].rating)
-                                                                            && (products[j].rating % 1)>= 0.5) { %>
-                                                                            <div class="bi-star-half"></div>
-                                                                            <% } else { %>
-                                                                                <div class="bi-star"></div>
-                                                                                <% } %>
-                                                                                    <% } %>
-                                                                                        (<%= products[j].rating %>)
-                                                            </div>
-                                                            <!-- Botón -->
-                                                            <div class="text-start mt-3">
-                                                                <a class="btn btn-outline-dark mt-auto" href="#">Add to
-                                                                    Cart</a>
-                                                            </div>
-                                                            <!-- Formulario con AJAX -->
-
+                                                    <% } %>
+                                                    (<%= carouselProduct.rating %>)
+                                                </div>
+                                                <!-- Botón -->
+                                                <div class="text-start mt-3">
+                                                    <!-- Formulario con AJAX -->
+                                                    <form class="addToCartForm" id="addToCartForm_<%= carouselProduct._id %>">
+                                                        <input type="hidden" name="productId"
+                                                            value="<%= carouselProduct._id %>">
+                                                        <button type="button"
+                                                            class="addToCartButton btn btn-outline-dark mt-auto btn-add-cart"
+                                                            data-product-id="<%= carouselProduct._id %>">Add to Cart</button>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
-                                        <% } %>
-                                </div>
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
-                        <% } %>
+                    </div>
+                <% } %>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly"
                 data-bs-slide="prev">
@@ -344,6 +345,8 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+
+        <!-- FIN CARROUSEL -->
 
 
 
