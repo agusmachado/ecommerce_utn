@@ -7,10 +7,10 @@
     <div class="row mt-5">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Electronics</a></li>
+                <li class="breadcrumb-item"><a href="#">Electrónica</a></li>
                 <li class="breadcrumb-item"><a href="#">Audio</a></li>
                 <li class="breadcrumb-item"><a href="#">Headphones</a></li>
-                <li class="breadcrumb-item"><a href="#">Shop Headphones by type</a></li>
+                <li class="breadcrumb-item"><a href="#">Comprar</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Airpods-max</li>
             </ol>
         </nav>
@@ -52,11 +52,11 @@
                     <h2><%= '$' + product.price %></h2>
                 </div>
                 <div class=" mb-4 white-space: nowrap;">
-                    <p>suggested payments with 6 months special financing</p>
+                    <p>Financiación a 6 meses!</p>
                 </div>
             </div>
             <!-- Columna para detalles (precio, color, etc.) -->
-            <h5 class="mt-2 mb-2 px-3 py-2">Choose a Color</h5>
+            <h5 class="mt-2 mb-2 px-3 py-2">Elegir color</h5>
 
 <div class="color-options px-3 py-2 border-bottom">
 <% product.colors.forEach(color => { %>
@@ -73,20 +73,14 @@
                     <input type="number" class="custom-input text-center" id="quantity" value="1" readonly>
                     <button class="custom-button" id="increment">+</button>
                 </div>
-                <p class="custom-message ml-2">Only <span class="naranja">12 items</span> left!<br> Don't miss it
+                <p class="custom-message ml-2">Quedan solo <span class="naranja">12 items</span> <br> No te los pierdas!
                 </p>
             </div>
 
             <!-- Botones buy y add to cart -->
             <div class="mt-1 mb-1 px-3 py-1 mt-4">
-                <button type="button" class="btn mr-4 mr-md-4 mb-md-0  btn-primary btn-round ">Buy Now</button>
-                <!-- Formulario con AJAX -->                                           
-                <form class="addToCartForm" id="addToCartForm_<%= product._id %>">
-                    <input type="hidden" name="productId" value="<%= product._id %>">
-                    <button type="button"
-                        class="addToCartButton btn btn-outline-dark mt-auto btn-add-cart"
-                        data-product-id="<%= product._id %>">Agregar al Carrito</button>
-                </form>
+                <button type="button" class="btn mr-4 mr-md-4 mb-md-0  btn-primary btn-round " ><a href="/formulario">Comprar Ahora</a> </button>
+                <button type="button" class="btn ml-2 ml-md-4 mb-md-0  btn-outline-primary btn-roundcart ">Agregar al carrito</button>
             </div>
 
 
@@ -95,15 +89,15 @@
                 <div class="col ">
                     <div class="col-md-8 border px-3 py-2 ">
                         <div class="info-content">
-                            <i class="fa fa-truck"></i> <span>Free Delivery</span><br>
-                            <a href="#">Enter your Postal Code for Delivery Availability</a>
+                            <i class="fa fa-truck"></i> <span>Envío gratis</span><br>
+                            <a href="#">Ingresá tu Código Postal</a>
                         </div>
                     </div>
                     <div class="col-md-8 border px-3 py-2 ">
                         <div class="info-content">
-                            <i class="bi bi-archive"></i> <span>Return Delivery</span>
+                            <i class="bi bi-archive"></i> <span>Devolución</span>
                             <br>
-                            <p>Free 30 days Delivery Returns.<a href="#">Details</a></p>
+                            <p>Devoluciones sin cargo por 30 días.<a href="#">Detalles</a></p>
                         </div>
                     </div>
                 </div>
@@ -113,48 +107,7 @@
 </section>
 
     
-<!-- Script para manejar el envío del formulario con AJAX -->
-<script>
-    // Espera a que el DOM esté completamente cargado
-    document.addEventListener("DOMContentLoaded", function () {
-      // Obtén todos los botones con la clase 'addToCartButton'
-      const addToCartButtons = document.querySelectorAll('.addToCartButton');
-  
-      // Itera sobre cada botón
-      addToCartButtons.forEach(button => {
-        // Agrega un evento de clic al botón
-        button.addEventListener('click', function () {
-          // Obtén el formulario actual asociado con el botón
-          const currentForm = button.closest('form');
-  
-          // Obtén el valor del campo productId del formulario actual
-          const productId = currentForm.querySelector('[name="productId"]').value;
-  
-          // Realiza una solicitud AJAX al servidor
-          addToCart(productId);
-        });
-      });
-    });
-  
-    async function addToCart(productId) {
-      try {
-        const response = await fetch(`/addToCart/${productId}`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
-  
-        const data = await response.json();
-        console.log(data);
-  
-        // Puedes agregar lógica adicional aquí, como actualizar la UI si es necesario
-  
-      } catch (error) {
-        console.error('Error al agregar producto al carrito:', error);
-      }
-    }
-  </script>
+
 
 <%- include('./partials/footer.ejs') %> 
 

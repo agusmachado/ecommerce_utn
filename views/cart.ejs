@@ -9,75 +9,67 @@
     <%- include('./partials/header.ejs') %> 
    
 
-  <section class="py-5">
-    <div class="container px-4 px-lg-5 mt-2">
-      <% cartItems.forEach(item => { %>
-        <div class="cart-item" id="cartItem_<%= item._id %>">
-            <div class="d-flex flex-wrap m-5 ">
-                <div class="card " style="width: 30rem; ">
-                    <h4 class="p-1 m-1"><%= item.name %></h4>
-                    <h6 class="p-1 m-1">Tienda Oficial</h6>
-                    <hr>
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="<%= item.img %>" alt="<%= item.name %>" style="height: 25vh; "/>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">                           
-
-
-                        <!-- Columna para detalles (cantidad) -->
-                        <div class="d-flex align-items-center mt-4 px-3 py-2">                        
-                            <p class="custom-message ml-2">$<%= item.price %></p>
-                        </div>
-
-                        <!-- Links -->
-                        <nav class="navbar navbar-expand-lg ">
-                            <div class="container-fluid">
-
-                                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                        <li class="nav-item">                                        
-                                            <a href="#" class="nav-link remove-from-cart" data-product-id="<%= item._id %>">Eliminar</a>
-                                        </li> 
-                                    </ul>
-                                </div>
+    <div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <!-- Itera sobre los elementos del carrito -->
+            <% cartItems.forEach(item => { %>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <!-- Imagen del producto -->
+                                <img src="<%= item.img %>" alt="<%= item.name %>" class="img-fluid" />
                             </div>
-                        </nav>
+                            <div class="col-md-8">
+                                <!-- Detalles del producto -->
+                                <h5 class="card-title"><%= item.name %></h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Tienda Oficial</h6>
+                                <hr>
+                                <!-- Precio del producto -->
+                                <p class="card-text custom-message">$<%= item.price %></p>
+                                <!-- Botón para eliminar el producto del carrito -->
+                                <a href="#" class="btn btn-danger remove-from-cart" data-product-id="<%= item._id %>">Eliminar</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <% }); %>
         </div>
-            <% }); %>    
-    
-    
-                <!-- Card Aside -->
-                <div class="card h-25 " style="width: 18rem; margin-left: 30px;">
-                    <div class="card-body">
-                        <h5 class="card-title">Resumen de Compra</h5>
-                        <hr>
-                        <div class="d-flex justify-content-between">
-                            <p class="card-subtitle mb-2 text-body-secondary">Producto</p>
-                            <p class="card-text">$100</p>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <p class="card-subtitle mb-2 text-body-secondary">Envio</p>
-                            <p class="card-text">$10</p>
-                        </div>
-                        <div class="mb-2">
-                            <a href="#" class="card-link text-decoration-none">Ingresar Cupon </a>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <p class="card-subtitle mb-2 text-body-secondary">Total</p>
-                            <p class="card-text">$10</p>
-                        </div>
-                        <button class="btn btn-secondary mt-4">Comprar ahora</button>
-                    </div>
-                </div>    
-            </div>
+        <div class="col-lg-4 mt-4 mt-lg-0">
+            <!-- Sección de resumen de compra -->
+            <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">Resumen de Compra</h5>
+                  <hr>
+                  <% let total = 0; %>
+                  <% cartItems.forEach(item => { %>
+                      <% total += item.price; %>
+                      <!-- Detalles de cada producto en el carrito -->
+                      <div class="d-flex justify-content-between">
+                          <p><%= item.name %></p>
+                          <p>$<%= item.price.toFixed(2) %></p>
+                      </div>
+                  <% }); %>
+                  <!-- Sección de envío -->
+                  <div class="d-flex justify-content-between">
+                      <p class="card-subtitle mb-2 text-body-secondary">Envío</p>
+                      <p class="card-text">$10</p>
+                  </div>
+                  <!-- Sección de total, incluyendo el envío con dos decimales -->
+                  <div class="d-flex justify-content-between">
+                      <p class="card-subtitle mb-2 text-body-secondary">Total</p>
+                      <% const totalWithShipping = (total + 10).toFixed(2); %>
+                      <p class="card-text">$<%= totalWithShipping %></p>
+                  </div>
+                  <!-- Botón para comprar ahora -->
+                  <a href="/formulario" class="btn btn-secondary mt-4">Comprar ahora</a>
+              </div>
+          </div>
         </div>
     </div>
-</section>
+</div>
+
   
   <!-- Script para manejar la eliminación de productos del carrito -->
   <script>
