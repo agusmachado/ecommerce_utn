@@ -1,84 +1,113 @@
 <%- include('./partials/header.ejs') %> 
 
-    <header class=" py-2">
+
+<!-- HERO -->
 
 
+<style>
+    @media  (max-width: 767px){
+        .media {
+            text-align: center;
+        }
+        .chic{
+            display: none;
+        }
+       
+    }
+</style>
+
+<header class=" py-2">
+           
         <div id="carouselExampleAutoplaying" style="z-index: -2;" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="d-flex justify-content-evenly" style="background-color: #FBF0E4; border: 1px solid #FBF0E4; width: 80%;margin: auto; ">
-                    <div >
-                        <h2 class="mt-5">Aprovecha las ofertas</h2>
-                        <h2 class="mt-4">Hasta un 50% de decuento</h2>
-                        <button class="btn btn-secondary mt-4 mb-4">Compre ahora</button>
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-evenly"
+                        style="background-color: #FBF0E4; border: 1px solid #FBF0E4; width: 80%;margin: auto; ">
+                        <div class="text">
+                            <h2 class="mt-5 media">Aprovecha las ofertas</h2>
+                            <h2 class="mt-4 media">Hasta un 50% de decuento</h2>
+                            <div class="media">
+                            <button class="btn btn-secondary mt-4 mb-4 media">Compre ahora</button>
+                            </div>
+                        </div>
+                        <div >
+                            <img class="chic"  src="../img/chica.png" class="img-fluid" alt="chica">
+                        </div>
+
                     </div>
-                    <div >
-                        <img src="../img/chica.png" class="img-fluid" alt="chica">
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-evenly"
+                        style="background-color:  #FBF0E4; border: 1px solid #FBF0E4; width: 80%;margin: auto; ">
+                        <div>
+                            <h2 class="mt-5 media">Modelos Unicos</h2>
+                            <h2 class="mt-4 media">Aprovecha los descuentos</h2>
+                            <div class="media">
+                                  <button class="btn btn-secondary mt-4">Compre ahora</button>
+                            </div>
+                          
+                        </div>
+                        <div >
+                            <img class="chic"  src="../img/chica2.png" class="img-fluid" alt="chica">
+                        </div>
+
                     </div>
-                    
-                  </div>
-              </div>
-              <div class="carousel-item">
-                <div class="d-flex justify-content-evenly" style="background-color:  #FBF0E4; border: 1px solid #FBF0E4; width: 80%;margin: auto; ">
-                    <div >
-                        <h2 class="mt-5">Aprovecha las ofertas</h2>
-                        <h2 class="mt-4">Hasta un 50% de decuento</h2>
-                        <button class="btn btn-secondary mt-4">Compre ahora</button>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-evenly"
+                        style="background-color:  #FBF0E4; border: 1px solid #FBF0E4; width: 80%;margin: auto; ">
+                        <div>
+                            <h2 class="mt-5 media">Hay un modelo para vos</h2>
+                            <h2 class="mt-4 media">Diseños Exclusivos</h2>
+                            <div class="media">
+                            <button class="btn btn-secondary mt-4 mb-4 media">Compre ahora</button>
+                            </div>
+                        </div>
+                        <div >
+                            <img class="chic" src="../img/chica3.png" class="img-fluid" alt="chica">
+                        </div>
+
                     </div>
-                    <div >
-                        <img src="../img/chica2.png" class="img-fluid" alt="chica">
-                    </div>
-                    
-                  </div>
-              </div>
-              <div class="carousel-item">
-                <div class="d-flex justify-content-evenly" style="background-color:  #FBF0E4; border: 1px solid #FBF0E4; width: 80%;margin: auto; ">
-                    <div >
-                        <h2 class="mt-5">Aprovecha las ofertas</h2>
-                        <h2 class="mt-4">Hasta un 50% de decuento</h2>
-                        <button class="btn btn-secondary mt-4 mb-4">Compre ahora</button>
-                    </div>
-                    <div >
-                        <img src="../img/chica3.png" class="img-fluid" alt="chica">
-                    </div>
-                    
-                  </div>
-              </div>
+                </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
             </button>
-          </div>
-        
-    </header>
+        </div>
+
+    </header>   
+    
+<!-- FIN HERO -->
 
 
 <!-- SECCIÓN FILTRO -->
 
-    <section class="py-6"> 
-        <div class="container px-lg-6 px-lg-6 mt-5">
-    <nav class="navbar navbar-expand-lg mt-4">
-        <div class="container-fluid px-4 px-lg-3" style="margin-left: 3.125rem;">
-            <form action="/filtro" method="GET"> 
+<section class="py-8 d-flex justify-content-center align-items-center">
+    <div class="container-fluid px-lg-6 mt-6" style="width: 60%;">
+        <nav class="navbar navbar-expand-lg mt-4">
+            <div class="container px-4 px-lg-3" style="margin-left: 3.125rem;">
+                <form action="/filtro" method="GET" class="d-flex align-items-center flex-wrap justify-content-center"> 
 
-                <label for="keyword">Palabra clave:</label>
-                <input type="text" name="keyword" placeholder="Buscar por palabra clave">
+                    <label style="background: F3F4F6; color: black; margin-right: 10px;" for="keyword">Palabra clave:</label>
+                    <input style="border-radius: 5px; margin-right: 20px; border-color: #ccc; " type="text" name="keyword" placeholder="Buscar por palabra clave">
 
-                <label for="priceRange">Rango de precios:</label>
-                    <select name="priceRange">
+                    <label style="background: F3F4F6; color: black; margin-right: 10px;" for="priceRange">Rango de precios:</label>
+                    <select style="border-radius: 5px; margin-right: 20px; border-color: #ccc;" name="priceRange">
                         <option value="">Cualquier precio</option>
                         <option value="25">Entre $10 y $25</option>
                         <option value="50">Entre $25 y $50</option>
                         <option value="100">Entre $50 y $100</option>
                     </select>
 
-                    <label for="company">Marca:</label>
-                    <select name="company">
+                    <label style="background: F3F4F6; color: black; margin-right: 10px;" for="company">Marca:</label>
+                    <select style="border-radius: 5px; margin-right: 20px; border-color: #ccc;" name="company">
                         <option value="">Cualquier marca</option>
                         <option value="Noga">Noga</option>
                         <option value="Sony">Sony</option>
@@ -87,272 +116,234 @@
                         <option value="Sennheiser">Sennheiser</option>
                     </select>
 
-                    <button type="submit">Buscar</button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-5 ">
-                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle m-1" style="background-color: #ecf0f4; border-radius: 35px;"
-                            href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Marca
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle m-1" style="background-color: #ecf0f4; border-radius: 35px;"
-                            href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Precio
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li> 
-                </ul>
-    
-            </div>
-        </div>
-    
-        <div style="margin-right: 9.688rem;">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
-                <ul">
-    
-                    <li class="nav-item dropdown" style="list-style: none;">
-                        <a class="nav-link dropdown-toggle m-1 text-center pt-1 "
-                            style="background-color: #ecf0f4; border-radius: 35px; height: 35px; width: 100px;  "
-                            href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Ordenar
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Modelo</a></li>
-                            <li><a class="dropdown-item" href="#">Precio</a></li>
-                            <!-- <li><a class="dropdown-item" href="#"></a></li> -->
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </form>
-        </div>
-    
-    </nav>
-
+                    <button class="btn btn-secondary ml-2" type="submit" style="width: 150px;">Buscar</button>  
+                        
+                </form>
+            </div>    
+        </nav>
+    </div>
 </section>
-</div>
-    
-    <style>
-        @media (max-width: 794px) and (min-width: 390px) {
-            a.nav-link {
-                background-color: transparent !important;
-                
-            }
-        }
-    </style>
 
-
+  
+                        
+<!-- FIN SECCIÓN FILTRO -->
+   
 
 <section class="py-5">
-    <div class="container px-4 px-lg-5 mt-5">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-start">
-            <% products.forEach(product => { %>
-            <div class="col mb-4">
-                <div class="card custom-card">
-                    <!-- Product image with background and shadow -->
-                    <div  class="image-container">
-                        <img class="card-img-top" src="<%= product.img %>" alt="<%= product.name %>" />
-                    </div>
-                    <!-- Product details-->
-                    <div class="card-body ">
-                      
-                            <!-- Title with larger font size -->
-                        <div class="miclase d-flex justify-content-between align-items-center ">
-                        <h5 class="fw-bolder" style="font-size: 1rem;">
-                            <a class="no_underline tamtyp" href="/product/<%= product._id %>"><%= product.name %></a>
-                        </h5>
-                        <p class="fw-bolder tamtyp"><%= '$' + product.price %></p>
-                        </div>
-
-                            <!-- Descripción del producto with smaller font size -->
-                            <% if (product.description) { %>
-                                <p class="flex-fill tamdes"><%= product.description %></p>
-                            <% } %>
-                            <!-- Estrellitas de rating verdes con el rating -->
-                            <div class="d-flex justify-content-start align-items-center text-success">
-                                <% for (let i = 0; i < 5; i++) { %>
-                                    <% if (i < Math.floor(product.rating)) { %>
-                                        <div class="bi-star-fill"></div>
-                                    <% } else if (i === Math.floor(product.rating) && (product.rating % 1) >= 0.5) { %>
-                                        <div class="bi-star-half"></div>
-                                    <% } else { %>
-                                        <div class="bi-star"></div>
-                                    <% } %>
-                                <% } %>
-                                (<%= product.rating %>)
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-start">
+                <% products.forEach(product=> { %>
+                    <div class="col mb-4">
+                        <div class="card custom-card">
+                            <!-- Product image with background and shadow -->
+                            <div class="image-container">
+                                <img class="card-img-top" src="<%= product.img %>" alt="<%= product.name %>" />
                             </div>
-                            <!-- Botón -->
-                            <div class="text-start mt-3"> 
-                                <!-- Formulario con AJAX -->                                
-                                <form class="addToCartForm" id="addToCartForm_<%= product._id %>">
-                                    <input type="hidden" name="productId" value="<%= product._id %>">
-                                    <button type="button" class="addToCartButton btn btn-outline-dark mt-auto btn-add-cart" data-product-id="<%= product._id %>">Agregar al carrito</button>
-                                </form>                  
-                            </div>
-                    </div>
-                </div>
-            </div>
-            <% }); %>
-        </div>
-         <div class="row">
-    <!-- pagination -->
-    <% if(pages > 0) { %> <!-- show pagination if there is pages -->
-        <nav class="mx-auto">
-          <ul class="pagination">
-            <!-- FIRST ITEM -->
-            <% if(current == 1) { %>
-              <li class="page-item disabled">
-                <a class="page-link" href="#">First</a>
-              </li>
-            <% } else { %>
-              <li class="page-item">
-                <a class="page-link" href="/products/1">First</a>
-              </li>
-            <% } %>
-  
-            <!-- ITEMS  -->
-            <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
-            <% if(i !== 1) { %>
-              <li class="page-item disabled">
-                <a class="page-link" href="#">...</a>
-              </li>
-            <% } %>
-            <% for(; i <= (Number(current) + 4) && i <= pages; i++) { %>
-              <% if(i == current) { %>
-                <li class="page-item active">
-                  <a class="page-link" href="<%= i %>">
-                    <%= i %>
-                  </a>
-                </li>
-              <% } else { %>
-                <li class="page-item">
-                  <a class="page-link" href="/products/<%= i %>">
-                    <%= i %>
-                  </a>
-                </li>
-              <% } %>
-              <% if (i == Number(current) + 4 && i < pages) { %>
-                 <li class="page-item disabled">
-                   <a class="page-link" href="#">...</a>
-                 </li>
-              <% } %>
-            <% } %>
-  
-            <!-- LAST ITEM -->
-            <% if(current == pages) { %>
-              <li class="page-item disabled">
-                <a class="page-link" href="#">
-                  Last
-                </a>
-              </li>
-            <% } else { %>
-              <li class="page-item">
-                <a class="page-link" href="/products/<%= pages %>">
-                  Last
-                </a>
-              </li>
-            <% } %>
-          </ul>
-        </nav>
-      <% } %>
-      
-  </div>
-    </div>
+                            <!-- Product details-->
+                            <div class="card-body ">
 
-
-
-    <h1 class="text-center">Productos mas vendidos</h1>
-
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <% let productsPerSlide = 4; %>
-            <% for (let i = 0; i < products.length; i += productsPerSlide) { %>
-                <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
-                    <div class="container px-4 px-lg-5 mt-5">
-                        <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-start">
-                            <% for (let j = i; j < Math.min(i + productsPerSlide, products.length); j++) { %>
-                                <div class="col mb-4">
-                                    <div class="card custom-card">
-                                        <!-- Product image with background and shadow -->
-                                        <div class="image-container">
-                                            <img class="card-img-top" src="<%= products[j].img %>" alt="<%= products[j].name %>" />
-                                        </div>
-                                        <!-- Product details-->
-                                        <div class="card-body">
-                                            <!-- Title with larger font size -->
-                                            <div class="miclase d-flex justify-content-between align-items-center">
-                                                <h5 class="fw-bolder" style="font-size: 1rem;">
-                                                    <a class="no_underline tamtyp" href="/main/<%= products[j]._id %>"><%= products[j].name %></a>
-                                                </h5>
-                                                <p class="fw-bolder tamtyp"><%= '$' + products[j].price %></p>
-                                            </div>
-                                            <!-- Descripción del producto with smaller font size -->
-                                            <% if (products[j].description) { %>
-                                                <p class="flex-fill tamdes"><%= products[j].description %></p>
-                                            <% } %>
-                                            <!-- Estrellitas de rating verdes con el rating -->
-                                            <div class="d-flex justify-content-start align-items-center text-success">
-                                                <% for (let k = 0; k < 5; k++) { %>
-                                                    <% if (k < Math.floor(products[j].rating)) { %>
-                                                        <div class="bi-star-fill"></div>
-                                                    <% } else if (k === Math.floor(products[j].rating) && (products[j].rating % 1) >= 0.5) { %>
-                                                        <div class="bi-star-half"></div>
-                                                    <% } else { %>
-                                                        <div class="bi-star"></div>
-                                                    <% } %>
-                                                <% } %>
-                                                (<%= products[j].rating %>)
-                                            </div>
-                                            <!-- Botón -->
-                                            <div class="text-start mt-3">
-                                                <a class="btn btn-outline-dark mt-auto" href="#">Add to Cart</a>
-                                            </div>
-                                            <!-- Formulario con AJAX -->
-    
-                                        </div>
-                                    </div>
+                                <!-- Title with larger font size -->
+                                <div class="miclase d-flex justify-content-between align-items-center ">
+                                    <h5 class="fw-bolder" style="font-size: 1rem;">
+                                        <a class="no_underline tamtyp" href="/product/<%= product._id %>">
+                                            <%= product.name %>
+                                        </a>
+                                    </h5>
+                                    <p class="fw-bolder tamtyp">
+                                        <%= '$' + product.price %>
+                                    </p>
                                 </div>
-                            <% } %>
+
+                                <!-- Descripción del producto with smaller font size -->
+                                <% if (product.description) { %>
+                                    <p class="flex-fill tamdes">
+                                        <%= product.description %>
+                                    </p>
+                                    <% } %>
+                                        <!-- Estrellitas de rating verdes con el rating -->
+                                        <div class="d-flex justify-content-start align-items-center text-success">
+                                            <% for (let i=0; i < 5; i++) { %>
+                                                <% if (i < Math.floor(product.rating)) { %>
+                                                    <div class="bi-star-fill"></div>
+                                                    <% } else if (i===Math.floor(product.rating) && (product.rating %
+                                                        1)>= 0.5) { %>
+                                                        <div class="bi-star-half"></div>
+                                                        <% } else { %>
+                                                            <div class="bi-star"></div>
+                                                            <% } %>
+                                                                <% } %>
+                                                                    (<%= product.rating %>)
+                                        </div>
+                                        <!-- Botón -->
+                                        <div class="text-start mt-3">
+                                            <!-- Formulario con AJAX -->
+                                            <!-- <form class="addToCartForm" id="addToCartForm_<%= product._id %>">
+                                    <input type="hidden" name="productId" value="<%= product._id %>">
+                                    <button type="button" class="btn btn-outline-dark mt-auto btn-add-cart" data-product-id="<%= product._id %>">Agregar al carrito</button> -->
+                                            </form>
+                                            <form class="addToCartForm" id="addToCartForm_<%= product._id %>">
+                                                <input type="hidden" name="productId" value="<%= product._id %>">
+                                                <button type="button"
+                                                    class="addToCartButton btn btn-outline-dark mt-auto btn-add-cart"
+                                                    data-product-id="<%= product._id %>">Add to Cart</button>
+                                            </form>
+                                        </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            <% } %>
+                    <% }); %>
+            </div>
+           
+            <div class="row" >
+
+                <!-- pagination -->
+                <% if(pages> 0) { %> <!-- show pagination if there is pages -->
+                    <nav class="mx-auto " >
+                        <ul class="pagination" style="justify-content: center; ">
+                            <!-- FIRST ITEM -->
+                            <% if(current==1) { %>
+                                <li class="page-item disabled" >
+                                    <a class="page-link" href="#">First</a>
+                                </li>
+                                <% } else { %>
+                                    <li class="page-item" >
+                                        <a class="page-link" href="/products/1">First</a>
+                                    </li>
+                                    <% } %>
+
+                                        <!-- ITEMS  -->
+                                        <% var i=(Number(current)> 5 ? Number(current) - 4 : 1) %>
+                                            <% if(i !==1) { %>
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="#">...</a>
+                                                </li>
+                                                <% } %>
+                                                    <% for(; i <=(Number(current) + 4) && i <=pages; i++) { %>
+                                                        <% if(i==current) { %>
+                                                            <li class="page-item active">
+                                                                <a class="page-link" href="<%= i %>">
+                                                                    <%= i %>
+                                                                </a>
+                                                            </li>
+                                                            <% } else { %>
+                                                                <li class="page-item">
+                                                                    <a class="page-link" href="/products/<%= i %>">
+                                                                        <%= i %>
+                                                                    </a>
+                                                                </li>
+                                                                <% } %>
+                                                                    <% if (i==Number(current) + 4 && i < pages) { %>
+                                                                        <li class="page-item disabled">
+                                                                            <a class="page-link" href="#">...</a>
+                                                                        </li>
+                                                                        <% } %>
+                                                                            <% } %>
+
+                                                                                <!-- LAST ITEM -->
+                                                                                <% if(current==pages) { %>
+                                                                                    <li class="page-item disabled">
+                                                                                        <a class="page-link" href="#">
+                                                                                            Last
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <% } else { %>
+                                                                                        <li class="page-item">
+                                                                                            <a class="page-link"
+                                                                                                href="/products/<%= pages %>">
+                                                                                                Last
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <% } %>
+                        </ul>
+                    </nav>
+                    <% } %>
+
+            </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
 
 
 
+        <h1 class="text-center mt-4">Productos mas vendidos</h1>
 
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <% let productsPerSlide=4; %>
+                    <% for (let i=0; i < products.length; i +=productsPerSlide) { %>
+                        <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
+                            <div class="container px-4 px-lg-5 mt-5">
+                                <div
+                                    class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-start">
+                                    <% for (let j=i; j < Math.min(i + productsPerSlide, products.length); j++) { %>
+                                        <div class="col mb-4">
+                                            <div class="card custom-card">
+                                                <!-- Product image with background and shadow -->
+                                                <div class="image-container">
+                                                    <img class="card-img-top" src="<%= products[j].img %>"
+                                                        alt="<%= products[j].name %>" />
+                                                </div>
+                                                <!-- Product details-->
+                                                <div class="card-body">
+                                                    <!-- Title with larger font size -->
+                                                    <div
+                                                        class="miclase d-flex justify-content-between align-items-center">
+                                                        <h5 class="fw-bolder" style="font-size: 1rem;">
+                                                            <a class="no_underline tamtyp"
+                                                                href="/main/<%= products[j]._id %>">
+                                                                <%= products[j].name %>
+                                                            </a>
+                                                        </h5>
+                                                        <p class="fw-bolder tamtyp">
+                                                            <%= '$' + products[j].price %>
+                                                        </p>
+                                                    </div>
+                                                    <!-- Descripción del producto with smaller font size -->
+                                                    <% if (products[j].description) { %>
+                                                        <p class="flex-fill tamdes">
+                                                            <%= products[j].description %>
+                                                        </p>
+                                                        <% } %>
+                                                            <!-- Estrellitas de rating verdes con el rating -->
+                                                            <div
+                                                                class="d-flex justify-content-start align-items-center text-success">
+                                                                <% for (let k=0; k < 5; k++) { %>
+                                                                    <% if (k < Math.floor(products[j].rating)) { %>
+                                                                        <div class="bi-star-fill"></div>
+                                                                        <% } else if (k===Math.floor(products[j].rating)
+                                                                            && (products[j].rating % 1)>= 0.5) { %>
+                                                                            <div class="bi-star-half"></div>
+                                                                            <% } else { %>
+                                                                                <div class="bi-star"></div>
+                                                                                <% } %>
+                                                                                    <% } %>
+                                                                                        (<%= products[j].rating %>)
+                                                            </div>
+                                                            <!-- Botón -->
+                                                            <div class="text-start mt-3">
+                                                                <a class="btn btn-outline-dark mt-auto" href="#">Add to
+                                                                    Cart</a>
+                                                            </div>
+                                                            <!-- Formulario con AJAX -->
 
-
-
-    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% } %>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
 
 
 
