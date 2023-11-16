@@ -1,4 +1,5 @@
 const Product = require('../models/productos');
+const Cart = require('../models/cart')
 
 /* --- FUNCIONES PARA LOS CONTROLADORES */
 
@@ -148,10 +149,27 @@ const filtroGeneral = async (req, res) => {
     }
 }
 
+
+// ------------------- MOSTRAR PAGINA DEL CARRITO ------------------- //
+
+const paginaCarrito = async (req, res) => {
+    try {
+      // Aquí puedes obtener los productos en el carrito desde la base de datos
+      // Por ejemplo, si estás utilizando el modelo Cart:
+      const cartItems = await Cart.find();
+  
+      res.render('cart', { cartItems, user: req.user }); // Renderiza la página del carrito con los productos
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ mensaje: 'Error en el servidor' });
+    }
+  }
+
 module.exports = {
     obtenerProductosHome,
     obtenerProductoPorId,
     buscador,
     filtroPrecios,
-    filtroGeneral
+    filtroGeneral,
+    paginaCarrito
 }
