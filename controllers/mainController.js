@@ -165,11 +165,90 @@ const paginaCarrito = async (req, res) => {
     }
   }
 
+
+// ------------------- AGREGAR UN PRODUCTO AL CARRITO ------------------- //
+
+const agregarProductoCarrito = async (req, res) => {
+    const productId = req.params.productId;
+    console.log(productId)
+    try {
+        const product = await Product.findById(productId);
+  
+        if (!product) {
+            return res.status(404).json({ mensaje: "Producto no encontrado" });
+        }
+  
+        const newProductInCart = new Cart({
+            name: product.name,
+            img: product.img,
+            price: product.price,
+            amount: 1,
+        });
+  
+        await newProductInCart.save();
+  
+        // Obtén todos los productos en el carrito (aquí debes tener lógica según tu modelo)
+        const productsInCart = await Cart.find({});
+  
+        // Si es una solicitud AJAX, responde con JSON
+        if (req.xhr || req.accepts('json')) {
+            return res.json({ mensaje: "El producto fue agregado al carrito", products: productsInCart });
+        }
+  
+        // Si es una solicitud regular, renderiza la vista 'cart' con los productos en el carrito
+        res.render('cart', { productsInCart, user: req.user });
+    } catch (error) {
+        console.error(error);
+  
+        // Si es una solicitud AJAX, responde con JSON
+        if (req.xhr || req.headers.accept.indexOf('json') > -1) {
+            return res.status(500).json({ mensaje: "Error en el servidor" });
+        }
+  
+        // Si es una solicitud regular, redirige a una página de error o realiza otra acción apropiada
+        res.status(500).render('error', { mensaje: 'Error en el servidor' });
+    }
+  }
+
+
+// ------------------- ELIMINAR UN PRODUCTO DEL CARRITO ------------------- //
+
+const eliminarProductoCarrito = async (req, res) => {
+    const productId = req.params.productId;
+    console.log(productId);
+  
+    try {
+      // Elimina el producto del carrito utilizando el ID
+      const removedProduct = await Cart.findByIdAndDelete(productId);
+      console.log(removedProduct);
+  
+      if (!removedProduct) {
+        return res.status(404).json({ mensaje: "Producto no encontrado en el carrito" });
+      }
+  
+      // Devuelve un mensaje JSON indicando que la eliminación fue exitosa
+      res.json({ mensaje: "Producto eliminado del carrito" });
+  
+    } catch (error) {
+      console.error(error);
+  
+      // Si hay un error, responde con un mensaje de error
+      res.status(500).json({ mensaje: "Error en el servidor al eliminar producto del carrito" });
+    }
+  }
+
+
+
+
+
+
 module.exports = {
     obtenerProductosHome,
     obtenerProductoPorId,
     buscador,
     filtroPrecios,
     filtroGeneral,
-    paginaCarrito
+    paginaCarrito,
+    agregarProductoCarrito,
+    eliminarProductoCarrito
 }
