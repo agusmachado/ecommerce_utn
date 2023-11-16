@@ -13,7 +13,8 @@ const {
     paginaCarrito,
     agregarProductoCarrito,
     eliminarProductoCarrito
-} = require('../controllers/mainController')
+} = require('../controllers/mainController');
+const { route } = require('express/lib/router');
 
 
 //// ------------------- VISTAS DE LOS MÓDULOS -------------------- ////
@@ -52,5 +53,16 @@ router.post("/addToCart/:productId", agregarProductoCarrito);
 
 router.delete('/removeFromCart/:productId', eliminarProductoCarrito);
 
+router.get('/formulario', (req, res) => {
+  res.render('formCompra', { user: req.user })
+})
+
+router.get('/estaticas/envios', (req, res) => {
+  res.render('envios', { user: req.user })
+})
+
+router.get('/estaticas/ofertas', (req, res) => {
+  res.render('ofertas', { user: req.user })
+})
 
 module.exports=router
