@@ -1,7 +1,6 @@
 <%- include('./partials/header.ejs') %> 
 
-
-<section class="py-5">
+<section class="py-5 d-flex align-items-center justify-content-center">
     <div class="container px-4 px-lg-5 mt-5">
         <ul style="list-style: none;" class="text-center">
             <% products.forEach((producto) =>{ %>
@@ -9,7 +8,7 @@
                     <div class="hstack gap-5 m-4">
                         <div class="image-container">
                             <!-- Establece el tamaño máximo de la imagen -->
-                            <img src="<%= producto.img %>" alt="<%= producto.name %>" style="max-width: 100%; height: 15vh;">
+                            <img src="<%= producto.img %>" alt="<%= producto.name %>" style="max-width: auto; height: 15vh;">
                         </div>
                           
                         <h5><a class="no_underline tamtyp" href="/product/<%= producto._id %>"><%= producto.name %></a></h5>
@@ -31,9 +30,16 @@
                         </div>
                         <p><%= producto.price %>$</p>            
                     </div>
+                    
                     <!-- Botón -->
                     <div class="text-start mt-3">
-                        <button class="btn btn-outline-dark btn-sm btn-add-cart" href="#">Agregar al carrito</button>
+                        <!-- Formulario con AJAX -->                                           
+                        <form class="addToCartForm" id="addToCartForm_<%= producto._id %>">
+                            <input type="hidden" name="productId" value="<%= producto._id %>">
+                            <button type="button" class="addToCartButton btn btn-outline-dark mt-auto btn-add-cart w-100" style="font-size: 12px;">
+                                Agregar
+                            </button>
+                        </form>
                     </div>
                 </li>
             <% }) %>
@@ -43,6 +49,49 @@
 
 
 
+<!-- Script para manejar el envío del formulario con AJAX -->
+<script>
+    // Espera a que el DOM esté completamente cargado
+    document.addEventListener("DOMContentLoaded", function () {
+      // Obtén todos los botones con la clase 'addToCartButton'
+      const addToCartButtons = document.querySelectorAll('.addToCartButton');
+  
+      // Itera sobre cada botón
+      addToCartButtons.forEach(button => {
+        // Agrega un evento de clic al botón
+        button.addEventListener('click', function () {
+          // Obtén el formulario actual asociado con el botón
+          const currentForm = button.closest('form');
+  
+          // Obtén el valor del campo productId del formulario actual
+          const productId = currentForm.querySelector('[name="productId"]').value;
+  
+          // Realiza una solicitud AJAX al servidor
+          addToCart(productId);
+        });
+      });
+    });
+  
+    async function addToCart(productId) {
+      try {
+        const response = await fetch(`/addToCart/${productId}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+  
+        const data = await response.json();
+        console.log(data);
+  
+        // Puedes agregar lógica adicional aquí, como actualizar la UI si es necesario
+  
+      } catch (error) {
+        console.error('Error al agregar producto al carrito:', error);
+      }
+    }
+  </script>
+  
 
 
 
