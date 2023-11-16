@@ -3,18 +3,17 @@
 Este es un proyecto universitario desarrollado en la Universidad Tecnológica Nacional (UTN) de Buenos Aires. Se trata de un ecommerce desarrollado mediante el uso de tecnologías como NodeJS, Express, MongoDB, CSS y JavaScript.
 
 ![Shop](https://i.imgur.com/O6u9PB6.png)
-![Producto](https://i.imgur.com/HPN6Gdv.png)
+![Producto](https://i.imgur.com/dIKsmnW.png)
 
 ## **Funcionalidades**
 
 - **Login con Google:** Permite a los usuarios autenticarse utilizando sus cuentas de Google para una experiencia de inicio de sesión simplificada.
 - **Diseño Responsivo:** La interfaz del ecommerce se adapta a diferentes dispositivos, garantizando una experiencia óptima tanto en computadoras de escritorio como en dispositivos móviles.
-- **Valoración de Productos con Estrellas:** Los usuarios pueden valorar los productos utilizando un sistema de calificación por estrellas, permitiendo expresar su opinión sobre los productos adquiridos.
 - **Filtro de Productos:** Implementación de filtros que facilitan la búsqueda de productos según diferentes criterios, como categoría, precio, etc.
-- **Buscador de Productos:** Funcionalidad de búsqueda que permite a los usuarios encontrar rápidamente productos específicos dentro del catálogo.
-- **Productos Relacionados:** Muestra productos relacionados o recomendaciones basadas en el historial de búsqueda o compra del usuario.
+- **Buscador por palabra clave:** Funcionalidad de búsqueda que permite a los usuarios encontrar rápidamente productos específicos dentro del catálogo.
 - **Slider de Imágenes de Producto:** Presentación visual mediante un slider de imágenes para mostrar diferentes vistas o detalles de un producto específico.
 - **Carrito de Compras:** Implementación del carrito de compras que permite a los usuarios agregar, eliminar y gestionar productos antes de proceder al pago.
+- **Carrusel:** Carrusel automatico con 4 cards para una linda experiencia visual.
 
 ## **Configuración del Entorno**
 
@@ -49,13 +48,14 @@ Estas son las dependencias utilizadas en el proyecto:
 ## **Modelo Ecommerce**
 
 Link: [Dribbble - Shopcart E-Commerce Product Page](https://dribbble.com/shots/19614098-Shopcart-E-Commerce-Product-Page)
+
 ![Shop Modelo](https://i.imgur.com/v6O7wOp.png)
 ![Producto Modelo](https://i.imgur.com/VerBagC.png)
 
 ## **Deploy**
 
 El proyecto fue deployado en Railway.
-Link:https://ecommerceutn-production.up.railway.app/
+ Link:https://ecommerceutn-production.up.railway.app/
 
 <div>
 <h2 align="center">Languages and Tools</h2>
