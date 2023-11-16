@@ -117,14 +117,19 @@
                             </div>
                         <% } else { %>
                             <div>
-                                <i class="fas fa-user"></i>
-                                <a class="ms-2" href="/auth/login">Login</a>
+                            <ul class="navbar-nav me-5">                                                                
+                                <li class="nav-item dropdown">                                
+                                    <a class="nav-link active dropdown-toggle ms-2" href="#" data-bs-toggle="dropdown" aria-expanded="false">Login</a>
+                                    <ul class="dropdown-menu bg-danger text-center" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item font-weight-bold text-white" href="/auth/google">Google</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
                             </div>
                         <% } %>
                     </div>
                 </div>
             </div>
         </nav>
-        
-        
-        
+       
+       
