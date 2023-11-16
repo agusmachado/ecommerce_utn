@@ -204,12 +204,8 @@
                                 <!-- Formulario con AJAX -->                                
                                 <form class="addToCartForm" id="addToCartForm_<%= product._id %>">
                                     <input type="hidden" name="productId" value="<%= product._id %>">
-                                    <button type="button" class="btn btn-outline-dark mt-auto btn-add-cart" data-product-id="<%= product._id %>">Agregar al carrito</button>
-                                </form>  
-                                <form class="addToCartForm" id="addToCartForm_<%= product._id %>">
-                                    <input type="hidden" name="productId" value="<%= product._id %>">
-                                    <button type="button" class="addToCartButton" data-product-id="<%= product._id %>">Add to Cart</button>
-                                </form>                             
+                                    <button type="button" class="addToCartButton btn btn-outline-dark mt-auto btn-add-cart" data-product-id="<%= product._id %>">Agregar al carrito</button>
+                                </form>                  
                             </div>
                     </div>
                 </div>
