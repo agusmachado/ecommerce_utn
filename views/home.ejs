@@ -1,99 +1,130 @@
 <%- include('./partials/header.ejs') %> 
 
-    <header class=" py-2">
+
+<!-- HERO -->
 
 
+<style>
+    @media  (max-width: 767px){
+        .media {
+            text-align: center;
+        }
+        .chic{
+            display: none;
+        }
+       
+    }
+</style>
+
+<header class=" py-2">
+           
         <div id="carouselExampleAutoplaying" style="z-index: -2;" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="d-flex justify-content-evenly" style="background-color: #FBF0E4; border: 1px solid #FBF0E4; width: 80%;margin: auto; ">
-                    <div >
-                        <h2 class="mt-5">Aprovecha las ofertas</h2>
-                        <h2 class="mt-4">Hasta un 50% de decuento</h2>
-                        <button class="btn btn-secondary mt-4 mb-4">Compre ahora</button>
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-evenly"
+                        style="background-color: #FBF0E4; border: 1px solid #FBF0E4; width: 80%;margin: auto; ">
+                        <div class="text">
+                            <h2 class="mt-5 media">Aprovecha las ofertas</h2>
+                            <h2 class="mt-4 media">Hasta un 50% de decuento</h2>
+                            <div class="media">
+                            <button class="btn btn-secondary mt-4 mb-4 media">Compre ahora</button>
+                            </div>
+                        </div>
+                        <div >
+                            <img class="chic"  src="../img/chica.png" class="img-fluid" alt="chica">
+                        </div>
+
                     </div>
-                    <div >
-                        <img src="../img/chica.png" class="img-fluid" alt="chica">
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-evenly"
+                        style="background-color:  #FBF0E4; border: 1px solid #FBF0E4; width: 80%;margin: auto; ">
+                        <div>
+                            <h2 class="mt-5 media">Modelos Unicos</h2>
+                            <h2 class="mt-4 media">Aprovecha los descuentos</h2>
+                            <div class="media">
+                                  <button class="btn btn-secondary mt-4">Compre ahora</button>
+                            </div>
+                          
+                        </div>
+                        <div >
+                            <img class="chic"  src="../img/chica2.png" class="img-fluid" alt="chica">
+                        </div>
+
                     </div>
-                    
-                  </div>
-              </div>
-              <div class="carousel-item">
-                <div class="d-flex justify-content-evenly" style="background-color:  #FBF0E4; border: 1px solid #FBF0E4; width: 80%;margin: auto; ">
-                    <div >
-                        <h2 class="mt-5">Aprovecha las ofertas</h2>
-                        <h2 class="mt-4">Hasta un 50% de decuento</h2>
-                        <button class="btn btn-secondary mt-4">Compre ahora</button>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-evenly"
+                        style="background-color:  #FBF0E4; border: 1px solid #FBF0E4; width: 80%;margin: auto; ">
+                        <div>
+                            <h2 class="mt-5 media">Hay un modelo para vos</h2>
+                            <h2 class="mt-4 media">Diseños Exclusivos</h2>
+                            <div class="media">
+                            <button class="btn btn-secondary mt-4 mb-4 media">Compre ahora</button>
+                            </div>
+                        </div>
+                        <div >
+                            <img class="chic" src="../img/chica3.png" class="img-fluid" alt="chica">
+                        </div>
+
                     </div>
-                    <div >
-                        <img src="../img/chica2.png" class="img-fluid" alt="chica">
-                    </div>
-                    
-                  </div>
-              </div>
-              <div class="carousel-item">
-                <div class="d-flex justify-content-evenly" style="background-color:  #FBF0E4; border: 1px solid #FBF0E4; width: 80%;margin: auto; ">
-                    <div >
-                        <h2 class="mt-5">Aprovecha las ofertas</h2>
-                        <h2 class="mt-4">Hasta un 50% de decuento</h2>
-                        <button class="btn btn-secondary mt-4 mb-4">Compre ahora</button>
-                    </div>
-                    <div >
-                        <img src="../img/chica3.png" class="img-fluid" alt="chica">
-                    </div>
-                    
-                  </div>
-              </div>
+                </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
             </button>
-          </div>
-        
-    </header>
+        </div>
+
+    </header>   
+    
+<!-- FIN HERO -->
 
 
 <!-- SECCIÓN FILTRO -->
 
-    <section class="py-6"> 
-        <div class="container px-lg-6 px-lg-6 mt-5">
-            <nav class="navbar navbar-expand-lg mt-4">
-                <div class="container-fluid px-4 px-lg-3" style="margin-left: 3.125rem;">
-                    <form action="/filtro" method="GET"> 
+<section class="py-8 d-flex justify-content-center align-items-center">
+    <div class="container-fluid px-lg-6 mt-6" style="width: 60%;">
+        <nav class="navbar navbar-expand-lg mt-4">
+            <div class="container px-4 px-lg-3" style="margin-left: 3.125rem;">
+                <form action="/filtro" method="GET" class="d-flex align-items-center flex-wrap justify-content-center"> 
 
-                        <label style="background: F3F4F6; color: black;" for="keyword">Palabra clave:</label>
-                        <input style="border-radius: 5px; margin-right: 10px; border-color: #ccc; " type="text" name="keyword" placeholder="Buscar por palabra clave">
+                    <label style="background: F3F4F6; color: black; margin-right: 10px;" for="keyword">Palabra clave:</label>
+                    <input style="border-radius: 5px; margin-right: 20px; border-color: #ccc; " type="text" name="keyword" placeholder="Buscar por palabra clave">
 
-                            <label style="background: F3F4F6; color: black;" for="priceRange">Rango de precios:</label>
-                                <select style="border-radius: 5px; margin-right: 15px; border-color: #ccc;" name="priceRange">
-                                    <option value="">Cualquier precio</option>
-                                    <option value="25">Entre $10 y $25</option>
-                                    <option value="50">Entre $25 y $50</option>
-                                    <option value="100">Entre $50 y $100</option>
-                                </select>
+                    <label style="background: F3F4F6; color: black; margin-right: 10px;" for="priceRange">Rango de precios:</label>
+                    <select style="border-radius: 5px; margin-right: 20px; border-color: #ccc;" name="priceRange">
+                        <option value="">Cualquier precio</option>
+                        <option value="25">Entre $10 y $25</option>
+                        <option value="50">Entre $25 y $50</option>
+                        <option value="100">Entre $50 y $100</option>
+                    </select>
 
-                                <label style="background: F3F4F6; color: black;" for="company">Marca:</label>
-                                <select style="border-radius: 5px; margin-right: 15px; border-color: #ccc;" name="company">
-                                    <option value="">Cualquier marca</option>
-                                    <option value="Noga">Noga</option>
-                                    <option value="Sony">Sony</option>
-                                    <option value="Bose">Bose</option>
-                                    <option value="Philips">Philips</option>
-                                    <option value="Sennheiser">Sennheiser</option>
-                                </select>
+                    <label style="background: F3F4F6; color: black; margin-right: 10px;" for="company">Marca:</label>
+                    <select style="border-radius: 5px; margin-right: 20px; border-color: #ccc;" name="company">
+                        <option value="">Cualquier marca</option>
+                        <option value="Noga">Noga</option>
+                        <option value="Sony">Sony</option>
+                        <option value="Bose">Bose</option>
+                        <option value="Philips">Philips</option>
+                        <option value="Sennheiser">Sennheiser</option>
+                    </select>
 
-                            <button class="btn btn-secondary" type="submit">Buscar</button>  
-                                
-                    </form>
-                </div>    
-            </nav>
-        </div>
-    </section>    
+                    <button class="btn btn-secondary ml-2" type="submit" style="width: 150px;">Buscar</button>  
+                        
+                </form>
+            </div>    
+        </nav>
+    </div>
+</section>
+
+  
                         
 <!-- FIN SECCIÓN FILTRO -->
    
