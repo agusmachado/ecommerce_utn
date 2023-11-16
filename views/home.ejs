@@ -99,59 +99,6 @@
                         </select>
 
                         <button class="btn btn-secondary" type="submit">Buscar</button>
-
-                        <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-5 ">
-                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle m-1" style="background-color: #ecf0f4; border-radius: 35px;"
-                            href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Marca
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle m-1" style="background-color: #ecf0f4; border-radius: 35px;"
-                            href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Precio
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li> 
-                </ul>
-    
-            </div>
-        </div>
-    
-        <div style="margin-right: 9.688rem;">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
-                <ul">
-    
-                    <li class="nav-item dropdown" style="list-style: none;">
-                        <a class="nav-link dropdown-toggle m-1 text-center pt-1 "
-                            style="background-color: #ecf0f4; border-radius: 35px; height: 35px; width: 100px;  "
-                            href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Ordenar
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Modelo</a></li>
-                            <li><a class="dropdown-item" href="#">Precio</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div> -->
                     </form>
                 </div>
 
@@ -159,8 +106,6 @@
 
     </section>
     </div>
-
-   
 
     <section class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
@@ -193,7 +138,6 @@
                                         <%= product.description %>
                                     </p>
                                     <% } %>
-
                                         <!-- Estrellitas de rating verdes con el rating -->
                                         <div class="d-flex justify-content-start align-items-center text-success">
                                             <% for (let i=0; i < 5; i++) { %>
@@ -222,7 +166,7 @@
                                                     data-product-id="<%= product._id %>">Add to Cart</button>
                                             </form>
                                         </div>
-
+                            </div>
                         </div>
                     </div>
                     <% }); %>
@@ -233,14 +177,14 @@
                 <!-- pagination -->
                 <% if(pages> 0) { %> <!-- show pagination if there is pages -->
                     <nav class="mx-auto " >
-                        <ul class="pagination" style="justify-content: center;">
+                        <ul class="pagination" style="justify-content: center; ">
                             <!-- FIRST ITEM -->
                             <% if(current==1) { %>
-                                <li class="page-item disabled">
+                                <li class="page-item disabled" >
                                     <a class="page-link" href="#">First</a>
                                 </li>
                                 <% } else { %>
-                                    <li class="page-item">
+                                    <li class="page-item" >
                                         <a class="page-link" href="/products/1">First</a>
                                     </li>
                                     <% } %>
@@ -378,8 +322,6 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-
-
 
 
 
