@@ -1,0 +1,58 @@
+<%- include('./partials/header.ejs') %> 
+
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <ul style="list-style: none;" class="text-center">
+            <% products.forEach((producto) =>{ %>
+                <li class="d-flex justify-content-start align-items-center"> <!-- Agregada la clase align-items-center -->
+                    <div class="hstack gap-5 m-4">
+                        <div class="image-container">
+                            <!-- Establece el tamaño máximo de la imagen -->
+                            <img src="<%= producto.img %>" alt="<%= producto.name %>" style="max-width: 100%; height: 15vh;">
+                        </div>
+                          
+                        <h5><a class="no_underline tamtyp" href="/product/<%= producto._id %>"><%= producto.name %></a></h5>
+        
+                        <p><%= producto.description %></p>
+                        <p><%= producto.company %></p>
+                        <!-- Estrellitas de rating verdes con el rating -->
+                        <div class="d-flex justify-content-start align-items-center text-success">
+                            <% for (let i = 0; i < 5; i++) { %>
+                                <% if (i < Math.floor(producto.rating)) { %>
+                                    <div class="bi-star-fill"></div>
+                                <% } else if (i === Math.floor(producto.rating) && (producto.rating % 1) >= 0.5) { %>
+                                    <div class="bi-star-half"></div>
+                                <% } else { %>
+                                    <div class="bi-star"></div>
+                                <% } %>
+                            <% } %>
+                            (<%= producto.rating %>)
+                        </div>
+                        <p><%= producto.price %>$</p>            
+                    </div>
+                    <!-- Botón -->
+                    <div class="text-start mt-3">
+                        <button class="btn btn-outline-dark btn-sm btn-add-cart" href="#">Agregar al carrito</button>
+                    </div>
+                </li>
+            <% }) %>
+        </ul>  
+    </div>
+</section>
+
+
+
+
+
+
+  <script src="./star.js"></script>
+
+<%- include('./partials/footer.ejs') %> 
+
+
+</body>
+
+
+
+</html>

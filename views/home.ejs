@@ -57,23 +57,52 @@
         
     </header>
 
-    <nav class="navbar navbar-expand-lg mt-4 navDesp" style="width: 90%; margin: auto;">
-        <div class="container-fluid px-4 px-lg-5">
-    
+
+<!-- SECCIÓN FILTRO -->
+
+    <section class="py-6"> 
+        <div class="container px-lg-6 px-lg-6 mt-5">
+    <nav class="navbar navbar-expand-lg mt-4">
+        <div class="container-fluid px-4 px-lg-3" style="margin-left: 3.125rem;">
+            <form action="/filtro" method="GET"> 
+
+                <label for="keyword">Palabra clave:</label>
+                <input type="text" name="keyword" placeholder="Buscar por palabra clave">
+
+                <label for="priceRange">Rango de precios:</label>
+                    <select name="priceRange">
+                        <option value="">Cualquier precio</option>
+                        <option value="25">Entre $10 y $25</option>
+                        <option value="50">Entre $25 y $50</option>
+                        <option value="100">Entre $50 y $100</option>
+                    </select>
+
+                    <label for="company">Marca:</label>
+                    <select name="company">
+                        <option value="">Cualquier marca</option>
+                        <option value="Noga">Noga</option>
+                        <option value="Sony">Sony</option>
+                        <option value="Bose">Bose</option>
+                        <option value="Philips">Philips</option>
+                        <option value="Sennheiser">Sennheiser</option>
+                    </select>
+
+                    <button type="submit">Buscar</button>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-5 ">
-                    <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle m-1 " style="background-color: #ecf0f4; border-radius: 35px;"
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle m-1" style="background-color: #ecf0f4; border-radius: 35px;"
                             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Marca
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Noga</a></li>
-                            <li><a class="dropdown-item" href="#">Sony</a></li>
-                            <li><a class="dropdown-item" href="#">Bose</a></li>
-                            <li><a class="dropdown-item" href="#">Phillips</a></li>
-                            <li><a class="dropdown-item" href="#">Sennheiser</a></li>
-    
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -84,74 +113,43 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle m-1" style="background-color: #ecf0f4; border-radius: 35px;"
-                            href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Descripcion
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                           
-                            
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle m-1" style="background-color: #ecf0f4; border-radius: 35px;"
-                            href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Color
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            
-                           
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle m-1" style="background-color: #ecf0f4; border-radius: 35px;"
-                            href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Material
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            
-                          
-                        </ul>
-                    </li>
-                    
-                    <div class="buscar ms-5">
-                        <div class="input-group position-relative">
-                            <input type="text" id="formulario" class="form-control" placeholder="Buscar" aria-label="Buscar"
-                                aria-describedby="basic-addon2">
-    
-                           
-                            <button class="input-group-text" id="basic-addon2"
-                                style="background-color: white; cursor: pointer; border: none; position: absolute; right: 1px; top: 5px;">
-                                <i class="fas fa-search "></i>
-                            </button>
-                        </div>
-                    </div>
-    
-                    <!--  -->
-    
-    
+                    </li> 
                 </ul>
     
             </div>
         </div>
     
         <div style="margin-right: 9.688rem;">
-           
+            <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+                <ul">
+    
+                    <li class="nav-item dropdown" style="list-style: none;">
+                        <a class="nav-link dropdown-toggle m-1 text-center pt-1 "
+                            style="background-color: #ecf0f4; border-radius: 35px; height: 35px; width: 100px;  "
+                            href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Ordenar
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Modelo</a></li>
+                            <li><a class="dropdown-item" href="#">Precio</a></li>
+                            <!-- <li><a class="dropdown-item" href="#"></a></li> -->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </form>
         </div>
+    
     </nav>
+
+</section>
+</div>
+    
     <style>
         @media (max-width: 794px) and (min-width: 390px) {
             a.nav-link {
@@ -202,10 +200,13 @@
                                 (<%= product.rating %>)
                             </div>
                             <!-- Botón -->
-                            <div class="text-start mt-3">
-                                <button class="btn btn-outline-dark mt-auto btn-add-cart" href="#">Agregar al carrito</button>
+                            <div class="text-start mt-3"> 
+                                <!-- Formulario con AJAX -->                                
+                                <form class="addToCartForm" id="addToCartForm_<%= product._id %>">
+                                    <input type="hidden" name="productId" value="<%= product._id %>">
+                                    <button type="button" class="btn btn-outline-dark mt-auto btn-add-cart" data-product-id="<%= product._id %>">Agregar al carrito</button>
+                                </form>                               
                             </div>
-                      
                     </div>
                 </div>
             </div>
@@ -353,8 +354,61 @@
 
 
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+         const form = document.getElementById('priceSearchForm');
+         
+         form.querySelectorAll('button[data-min][data-max]').forEach(button => {
+             button.addEventListener('click', () => {
+                 form.querySelector('input[name="minPrice"]').value = button.dataset.min;
+                 form.querySelector('input[name="maxPrice"]').value = button.dataset.max;
+                 form.submit();
+             });
+         });
+     });
+     
+     </script>
+    <!-- Script para manejar el envío del formulario con AJAX -->
+    <script>
+        // Espera a que el DOM esté completamente cargado
+document.addEventListener("DOMContentLoaded", function () {
+    // Obtén todos los botones con la clase 'btn-add-cart'
+    const addToCartButtons = document.querySelectorAll('.btn-add-cart');
 
+    // Itera sobre cada botón
+    addToCartButtons.forEach(button => {
+        // Agrega un evento de clic al botón
+        button.addEventListener('click', function () {
+            // Obtén el valor del atributo data-product-id
+            const productId = button.dataset.productId;
 
+            // Realiza una solicitud AJAX al servidor
+            addToCart(productId);
+        });
+    });
+});
+
+async function addToCart(productId) {
+    try {
+        const response = await fetch(`/addToCart/${productId}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        const data = await response.json();
+        console.log(data);
+
+        // Puedes agregar lógica adicional aquí, como actualizar la UI si es necesario
+
+    } catch (error) {
+        console.error('Error al agregar producto al carrito:', error);
+    }
+}
+
+      </script>
+    
 
     <%- include('./partials/footer.ejs') %> 
 </body>
