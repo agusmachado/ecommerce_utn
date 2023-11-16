@@ -129,6 +129,8 @@
 <!-- FIN SECCIÓN FILTRO -->
    
 
+<!-- CARD -->
+
 <section class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-start">
@@ -181,7 +183,7 @@
                                                 <input type="hidden" name="productId" value="<%= product._id %>">
                                                 <button type="button"
                                                     class="addToCartButton btn btn-outline-dark mt-auto btn-add-cart"
-                                                    data-product-id="<%= product._id %>">Add to Cart</button>
+                                                    data-product-id="<%= product._id %>">Agregar al Carrito</button>
                                             </form>
                                         </div>
                             </div>
@@ -190,9 +192,13 @@
                     <% }); %>
             </div>
            
+            <!-- CARD -->
+
+            <!-- PAGINACIÓN -->
+
             <div class="row" >
 
-                <!-- pagination -->
+                
                 <% if(pages> 0) { %> <!-- show pagination if there is pages -->
                     <nav class="mx-auto " >
                         <ul class="pagination" style="justify-content: center; ">
@@ -322,7 +328,7 @@
                                                             value="<%= carouselProduct._id %>">
                                                         <button type="button"
                                                             class="addToCartButton btn btn-outline-dark mt-auto btn-add-cart"
-                                                            data-product-id="<%= carouselProduct._id %>">Add to Cart</button>
+                                                            data-product-id="<%= carouselProduct._id %>">Agregar al Carrito</button>
                                                     </form>
                                                 </div>
                                             </div>
