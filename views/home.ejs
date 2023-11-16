@@ -66,35 +66,36 @@
                 <div class="container-fluid px-4 px-lg-3" style="margin-left: 3.125rem;">
                     <form action="/filtro" method="GET"> 
 
-                        <label for="keyword">Palabra clave:</label>
-                        <input type="text" name="keyword" placeholder="Buscar por palabra clave">
+                        <label style="background: F3F4F6; color: black;" for="keyword">Palabra clave:</label>
+                        <input style="border-radius: 5px; margin-right: 10px; border-color: #ccc; " type="text" name="keyword" placeholder="Buscar por palabra clave">
 
-                        <label for="priceRange">Rango de precios:</label>
-                            <select name="priceRange">
-                                <option value="">Cualquier precio</option>
-                                <option value="25">Entre $10 y $25</option>
-                                <option value="50">Entre $25 y $50</option>
-                                <option value="100">Entre $50 y $100</option>
-                            </select>
+                            <label style="background: F3F4F6; color: black;" for="priceRange">Rango de precios:</label>
+                                <select style="border-radius: 5px; margin-right: 15px; border-color: #ccc;" name="priceRange">
+                                    <option value="">Cualquier precio</option>
+                                    <option value="25">Entre $10 y $25</option>
+                                    <option value="50">Entre $25 y $50</option>
+                                    <option value="100">Entre $50 y $100</option>
+                                </select>
 
-                            <label for="company">Marca:</label>
-                            <select name="company">
-                                <option value="">Cualquier marca</option>
-                                <option value="Noga">Noga</option>
-                                <option value="Sony">Sony</option>
-                                <option value="Bose">Bose</option>
-                                <option value="Philips">Philips</option>
-                                <option value="Sennheiser">Sennheiser</option>
-                            </select>
+                                <label style="background: F3F4F6; color: black;" for="company">Marca:</label>
+                                <select style="border-radius: 5px; margin-right: 15px; border-color: #ccc;" name="company">
+                                    <option value="">Cualquier marca</option>
+                                    <option value="Noga">Noga</option>
+                                    <option value="Sony">Sony</option>
+                                    <option value="Bose">Bose</option>
+                                    <option value="Philips">Philips</option>
+                                    <option value="Sennheiser">Sennheiser</option>
+                                </select>
 
-                            <button type="submit">Buscar</button>      
+                            <button class="btn btn-secondary" type="submit">Buscar</button>  
+                                
                     </form>
                 </div>    
             </nav>
         </div>
-    </section>
-    
-
+    </section>    
+                        
+<!-- FIN SECCIÓN FILTRO -->
    
 
 <section class="py-5">
