@@ -78,10 +78,22 @@
             </div>
 
             <!-- Botones buy y add to cart -->
-            <div class="mt-1 mb-1 px-3 py-1 mt-4">
-                <button type="button" class="btn mr-4 mr-md-4 mb-md-0  btn-primary btn-round " ><a href="/formulario">Comprar Ahora</a> </button>
-                <button type="button" class="btn ml-2 ml-md-4 mb-md-0  btn-outline-primary btn-roundcart ">Agregar al carrito</button>
+            <div class="d-flex">
+                <!-- Botón "Comprar Ahora" -->
+                <button type="button" class="btn mr-2 mr-md-2 mb-md-0 btn-primary btn-round">
+                    <a href="/formulario" class="text-white">Comprar Ahora</a>
+                </button>
+            
+                <!-- Formulario con AJAX -->
+                <form class="addToCartForm" id="addToCartForm_<%= product._id %>">
+                    <input type="hidden" name="productId" value="<%= product._id %>">
+                    <button type="button" 
+                            class="addToCartButton btn ml-2 ml-md-2 mb-md-0 btn-outline-primary btn-roundcart"
+                            data-product-id="<%= product._id %>"
+                            id="addToCartButton_<%= product._id %>">Agregar al Carrito</button>
+                </form>
             </div>
+            
 
 
             <!-- delivery info -->
@@ -107,6 +119,45 @@
 </section>
 
     
+<!-- Script para manejar el envío del formulario con AJAX -->
+<script>
+    // Espera a que el DOM esté completamente cargado
+    document.addEventListener("DOMContentLoaded", function () {
+      // Obtén todos los botones con la clase 'addToCartButton'
+      const addToCartButtons = document.querySelectorAll('.addToCartButton');
+  
+      // Itera sobre cada botón
+      addToCartButtons.forEach(button => {
+        // Agrega un evento de clic al botón
+        button.addEventListener('click', function () {
+          // Obtén el valor del campo productId del formulario actual
+          const productId = button.dataset.productId;
+  
+          // Realiza una solicitud AJAX al servidor
+          addToCart(productId);
+        });
+      });
+    });
+  
+    async function addToCart(productId) {
+      try {
+        const response = await fetch(`/addToCart/${productId}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+  
+        const data = await response.json();
+        console.log(data);
+  
+        // Puedes agregar lógica adicional aquí, como actualizar la UI si es necesario
+  
+      } catch (error) {
+        console.error('Error al agregar producto al carrito:', error);
+      }
+    }
+</script>
 
 
 <%- include('./partials/footer.ejs') %> 
