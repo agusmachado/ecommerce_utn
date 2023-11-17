@@ -57,7 +57,8 @@ router.delete('/removeFromCart/:productId', eliminarProductoCarrito);
 // ------------------- RUTAS PARA VER EL FORMULARIO ------------------- //
 
 router.get('/formulario', (req, res) => {
-  res.render('formCompra', { user: req.user })
+  const totalFromPurchase = req.query.total || req.query.price; 
+  res.render('formCompra', { totalFromPurchase, user: req.user })
 })
 
 // ------------------- RUTAS ESTÁTICAS ------------------- //

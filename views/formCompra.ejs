@@ -1,29 +1,30 @@
 <%- include('./partials/header.ejs') %> 
-    
+
+
+
 
     <div class="d-flex flex-wrap justify-content-center">
         <div>
             <!-- Card uno -->
             <div class="card mb-3 m-4 rounded-4 p-3" style="max-width:600px; ">
-                <h2>Revisar artículo y envío</h2>
+                <h2>Revisar total de la compra</h2>
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="https://i.imgur.com/6d9XFt5.png" class="img-fluid rounded-start w-100 " alt="auriculares">
+                        <img src="https://th-thumbnailer.cdn-si-edu.com/Fap7sa7RVIe3YwJMAdhhDaL7Klw=/1000x750/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/83/86/83863bc6-4760-41a6-9c6c-2e90d3648852/koss-sp3.jpg" class="img-fluid rounded-start w-100 " alt="auriculares">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body d-flex ">
-                            <div class="card-body d-flex-column">
-                                <h5 class="card-title">Airpods-Max</h5>
-    
-                                <p class="card-text"><small class="text-body-secondary">Color: Pink</small></p>
+                            <div class="card-body d-flex-column">                                                                
+                                    <% if (totalFromPurchase) { %>
+                                        <h5 class="card-title">Total:</h5> 
                             </div>
                             <div class="card-body d-flex-column">
-                                <h5 class="card-title">$549.00</h5>
-    
-                                <p class="card-text"><small class="text-body-secondary">Quantity:1</small></p>
-                            </div>
-    
-    
+                                <h5 class="card-title">$<%= totalFromPurchase %></h5>
+                                
+                                <% } else { %>                                
+                                <p>Total no disponible</p>
+                                <% } %>
+                            </div>    
                         </div>
                     </div>
                 </div>

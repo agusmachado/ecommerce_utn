@@ -38,34 +38,35 @@
         </div>
         <div class="col-lg-4 mt-4 mt-lg-0">
             <!-- Sección de resumen de compra -->
-            <div class="card">
-              <div class="card-body">
-                  <h5 class="card-title">Resumen de Compra</h5>
-                  <hr>
-                  <% let total = 0; %>
-                  <% cartItems.forEach(item => { %>
-                      <% total += item.price; %>
-                      <!-- Detalles de cada producto en el carrito -->
-                      <div class="d-flex justify-content-between">
-                          <p><%= item.name %></p>
-                          <p>$<%= item.price.toFixed(2) %></p>
-                      </div>
-                  <% }); %>
-                  <!-- Sección de envío -->
-                  <div class="d-flex justify-content-between">
-                      <p class="card-subtitle mb-2 text-body-secondary">Envío</p>
-                      <p class="card-text">$10</p>
-                  </div>
-                  <!-- Sección de total, incluyendo el envío con dos decimales -->
-                  <div class="d-flex justify-content-between">
-                      <p class="card-subtitle mb-2 text-body-secondary">Total</p>
-                      <% const totalWithShipping = (total + 10).toFixed(2); %>
-                      <p class="card-text">$<%= totalWithShipping %></p>
-                  </div>
-                  <!-- Botón para comprar ahora -->
-                  <a href="/formulario" class="btn btn-secondary mt-4">Comprar ahora</a>
-              </div>
+<div class="card">
+  <div class="card-body">
+      <h5 class="card-title">Resumen de Compra</h5>
+      <hr>
+      <% let total = 0; %>
+      <% cartItems.forEach(item => { %>
+          <% total += item.price; %>
+          <!-- Detalles de cada producto en el carrito -->
+          <div class="d-flex justify-content-between">
+              <p><%= item.name %></p>
+              <p>$<%= item.price.toFixed(2) %></p>
           </div>
+      <% }); %>
+      <!-- Sección de envío -->
+      <div class="d-flex justify-content-between">
+          <p class="card-subtitle mb-2 text-body-secondary">Envío</p>
+          <p class="card-text">$10</p>
+      </div>
+      <!-- Sección de total, incluyendo el envío con dos decimales -->
+      <div class="d-flex justify-content-between">
+          <p class="card-subtitle mb-2 text-body-secondary">Total</p>
+          <% const totalWithShipping = (total + 10).toFixed(2); %>
+          <p class="card-text">$<%= totalWithShipping %></p>
+      </div>
+      <!-- Botón para comprar ahora con el enlace que incluye el parámetro totalWithShipping -->
+      <a href="/formulario?total=<%= totalWithShipping %>" class="btn btn-secondary mt-4">Comprar ahora</a>
+  </div>
+</div>
+
         </div>
     </div>
 </div>
