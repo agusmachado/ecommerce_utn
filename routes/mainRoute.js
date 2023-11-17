@@ -53,16 +53,33 @@ router.post("/addToCart/:productId", agregarProductoCarrito);
 
 router.delete('/removeFromCart/:productId', eliminarProductoCarrito);
 
+// ------------------- RUTAS PARA VER EL FORMULARIO ------------------- //
+
 router.get('/formulario', (req, res) => {
   res.render('formCompra', { user: req.user })
 })
+
+// ------------------- RUTAS ESTÁTICAS ------------------- //
 
 router.get('/estaticas/envios', (req, res) => {
   res.render('envios', { user: req.user })
 })
 
-router.get('/estaticas/ofertas', (req, res) => {
-  res.render('ofertas', { user: req.user })
+router.get('/estaticas/nuevo', (req, res) => {
+  res.render('nuevo', { user: req.user })
 })
+
+router.get('/estaticas/gamers', (req, res) => {
+  res.render('gamers', { user: req.user })
+})
+
+router.get('/estaticas/run', (req, res) => {
+  res.render('run', { user: req.user })
+})
+
+router.get('/estaticas/desktop', (req, res) => {
+  res.render('desktop', { user: req.user })
+})
+
 
 module.exports=router
