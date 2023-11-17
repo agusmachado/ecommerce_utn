@@ -143,6 +143,7 @@ const filtroGeneral = async (req, res) => {
         // Construir la consulta con opciones de filtro
         let query = {
             $or: [
+               // Utilizamos regex para realizar búsquedas con expresiones regulares y options: 'i' para que la búsqueda no diferencie entre mayúsculas y minúsculas 
                 { name: { $regex: keyword, $options: 'i' } },
                 { company: { $regex: keyword, $options: 'i' } },
             ],
