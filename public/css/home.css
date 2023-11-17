@@ -21,7 +21,13 @@ a {
       color: white;
   }
   
-   
+
+  .tamtyp{
+    color:black
+  }
+  .tamtyp:hover {
+    color: #003D29; /* Cambio de color al pasar el mouse */
+  }
   
     /* Agrega estilos para el fondo gris y el efecto de sombra */
   .image-container {
