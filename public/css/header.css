@@ -37,3 +37,6 @@ main, header{
     padding: 10px;
     background: #ff5353;
 }
+.subrayado:hover{
+    text-decoration: underline;
+}
