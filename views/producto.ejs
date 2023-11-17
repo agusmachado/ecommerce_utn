@@ -37,15 +37,20 @@
             <div class="col-md-12 border-bottom px-3 py-0">
                 <h1><%= product.name %></h1>
                 <p> <br> <%=product.description %>.</p>
-                <div class="d-flex justify-content-start align-items-center mb-4 ">
-                    <div class="bi-star-fill" style="color: green;"></div>
-                    <div class="bi-star-fill" style="color: green;"></div>
-                    <div class="bi-star-fill" style="color: green;"></div>
-                    <div class="bi-star-fill" style="color: green;"></div>
-                    <div class="bi-star-fill" style="color: green;"></div>
-                    <p class="mb-0" style="color: green;"><%= '('+ product.rating +')' %></p>
+                <!-- Estrellitas de rating verdes con el rating -->
+                <div class="d-flex justify-content-start align-items-center text-success">
+                    <% for (let i=0; i < 5; i++) { %>
+                        <% if (i < Math.floor(product.rating)) { %>
+                            <div class="bi-star-fill"></div>
+                            <% } else if (i===Math.floor(product.rating) && (product.rating %
+                                1)>= 0.5) { %>
+                                <div class="bi-star-half"></div>
+                                <% } else { %>
+                                    <div class="bi-star"></div>
+                                    <% } %>
+                                        <% } %>
+                                            (<%= product.rating %>)
                 </div>
-            </div>
 
             <div class="border-bottom px-3 py-3">
                 <div class="mt-4" style="white-space: nowrap;">
@@ -78,7 +83,7 @@
             </div>
 
             <!-- Botones buy y add to cart -->
-            <div class="d-flex">
+            <div class="d-flex mt-4">
                 <!-- Botón "Comprar Ahora" -->
                 <button type="button" class="btn mr-2 mr-md-2 mb-md-0 btn-primary btn-round">
                     <a href="/formulario" class="text-white">Comprar Ahora</a>
@@ -97,7 +102,7 @@
 
 
             <!-- delivery info -->
-            <div class="container mt-3 ">
+            <div class="container mt-5 ">
                 <div class="col ">
                     <div class="col-md-8 border px-3 py-2 ">
                         <div class="info-content">
