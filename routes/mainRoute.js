@@ -12,7 +12,8 @@ const {
     filtroGeneral,
     paginaCarrito,
     agregarProductoCarrito,
-    eliminarProductoCarrito
+    eliminarProductoCarrito,
+    obtenerProductosGracias
 } = require('../controllers/mainController');
 const { route } = require('express/lib/router');
 
@@ -80,6 +81,8 @@ router.get('/estaticas/run', (req, res) => {
 router.get('/estaticas/desktop', (req, res) => {
   res.render('desktop', { user: req.user })
 })
+
+router.get('/estaticas/gracias', obtenerProductosGracias)
 
 
 module.exports=router
