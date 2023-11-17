@@ -1,0 +1,257 @@
+<%- include('./partials/header.ejs') %> 
+
+
+<!-- HERO -->
+
+
+<style>
+    @media  (max-width: 767px){
+        .media {
+            text-align: center;
+        }
+        .chic{
+            display: none;
+        }
+       
+    }
+</style>
+
+<header class=" py-2">
+           
+        <div id="carouselExampleAutoplaying" style="z-index: -2;" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-evenly"
+                        style="background-color: #FBF0E4; border: 1px solid #FBF0E4; width: 80%;margin: auto; ">
+                        <div class="text">
+                            <h2 class="mt-5 media">Aprovecha las ofertas</h2>
+                            <h2 class="mt-4 media">Hasta un 50% de decuento</h2>
+                            <div class="media">
+                            <button class="btn btn-secondary mt-4 mb-4 media">Compre ahora</button>
+                            </div>
+                        </div>
+                        <div >
+                            <img class="chic"  src="../img/chica.png" class="img-fluid" alt="chica">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-evenly"
+                        style="background-color:  #FBF0E4; border: 1px solid #FBF0E4; width: 80%;margin: auto; ">
+                        <div>
+                            <h2 class="mt-5 media">Modelos Unicos</h2>
+                            <h2 class="mt-4 media">Aprovecha los descuentos</h2>
+                            <div class="media">
+                                  <button class="btn btn-secondary mt-4">Compre ahora</button>
+                            </div>
+                          
+                        </div>
+                        <div >
+                            <img class="chic"  src="../img/chica2.png" class="img-fluid" alt="chica">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-evenly"
+                        style="background-color:  #FBF0E4; border: 1px solid #FBF0E4; width: 80%;margin: auto; ">
+                        <div>
+                            <h2 class="mt-5 media">Hay un modelo para vos</h2>
+                            <h2 class="mt-4 media">Diseños Exclusivos</h2>
+                            <div class="media">
+                            <button class="btn btn-secondary mt-4 mb-4 media">Compre ahora</button>
+                            </div>
+                        </div>
+                        <div >
+                            <img class="chic" src="../img/chica3.png" class="img-fluid" alt="chica">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+    </header>   
+    
+<!-- FIN HERO -->
+
+
+
+
+       
+     <!-- CARROUSEL -->
+
+        <h1 class="text-center mt-4">¡Muchas gracias por su compra!</h1>
+
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <% let productsPerSlide = 4; %>
+                <% for (let i = 0; i < products.length; i += productsPerSlide) { %>
+                    <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
+                        <div class="container px-4 px-lg-5 mt-5">
+                            <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-start">
+                                <% for (let j = i; j < Math.min(i + productsPerSlide, products.length); j++) { %>
+                                    <% const carouselProduct = products[j]; %>
+                                    <div class="col mb-4">
+                                        <div class="card custom-card">
+                                            <!-- Product image with background and shadow -->
+                                            <div class="image-container">
+                                                <img class="card-img-top" src="<%= carouselProduct.img %>"
+                                                    alt="<%= carouselProduct.name %>" />
+                                            </div>
+                                            <!-- Product details-->
+                                            <div class="card-body">
+                                                <!-- Title with larger font size -->
+                                                <div class="miclase d-flex justify-content-between align-items-center">
+                                                    <h5 class="fw-bolder" style="font-size: 1rem;">
+                                                        <a class="no_underline tamtyp"
+                                                            href="/main/<%= carouselProduct._id %>">
+                                                            <%= carouselProduct.name %>
+                                                        </a>
+                                                    </h5>
+                                                    <p class="fw-bolder tamtyp">
+                                                        <%= '$' + carouselProduct.price %>
+                                                    </p>
+                                                </div>
+                                                <!-- Descripción del producto with smaller font size -->
+                                                <% if (carouselProduct.description) { %>
+                                                    <p class="flex-fill tamdes">
+                                                        <%= carouselProduct.description %>
+                                                    </p>
+                                                <% } %>
+                                                <!-- Estrellitas de rating verdes con el rating -->
+                                                <div
+                                                    class="d-flex justify-content-start align-items-center text-success">
+                                                    <% for (let k = 0; k < 5; k++) { %>
+                                                        <% if (k < Math.floor(carouselProduct.rating)) { %>
+                                                            <div class="bi-star-fill"></div>
+                                                        <% } else if (k === Math.floor(carouselProduct.rating) && (carouselProduct.rating % 1) >= 0.5) { %>
+                                                            <div class="bi-star-half"></div>
+                                                        <% } else { %>
+                                                            <div class="bi-star"></div>
+                                                        <% } %>
+                                                    <% } %>
+                                                    (<%= carouselProduct.rating %>)
+                                                </div>
+                                                <!-- Botón -->
+                                                <div class="text-start mt-3">
+                                                    <!-- Formulario con AJAX -->
+                                                    <form class="addToCartForm" id="addToCartForm_<%= carouselProduct._id %>">
+                                                        <input type="hidden" name="productId"
+                                                            value="<%= carouselProduct._id %>">
+                                                        <button type="button"
+                                                            class="addToCartButton btn btn-outline-dark mt-auto btn-add-cart"
+                                                            data-product-id="<%= carouselProduct._id %>">Agregar al Carrito</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- FIN CARROUSEL -->
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        // Obtén una referencia al formulario de búsqueda por precio
+         const form = document.getElementById('priceSearchForm');
+         // Selecciona todos los botones en el formulario con atributos data-min y data-max
+         form.querySelectorAll('button[data-min][data-max]').forEach(button => {
+            // Agrega un evento de clic a cada botón 
+            button.addEventListener('click', () => {
+                // Cuando se hace clic en un botón, establece el valor mínimo del precio en el formulario
+                form.querySelector('input[name="minPrice"]').value = button.dataset.min;
+                
+                // Establece el valor máximo del precio en el formulario
+                form.querySelector('input[name="maxPrice"]').value = button.dataset.max;
+
+                form.submit();
+             });
+         });
+     });
+     
+     </script>
+<!-- Script para manejar el envío del formulario con AJAX -->
+<script>
+    // Espera a que el DOM esté completamente cargado
+    document.addEventListener("DOMContentLoaded", function () {
+      // Obtengo todos los botones con la clase 'addToCartButton'
+      const addToCartButtons = document.querySelectorAll('.addToCartButton');
+  
+      // Itera sobre cada botón
+      addToCartButtons.forEach(button => {
+        // Agrega un evento de clic al botón
+        button.addEventListener('click', function () {
+          // Obtén el formulario actual asociado con el botón
+          const currentForm = button.closest('form');
+  
+          // Obtén el valor del campo productId del formulario actual
+          const productId = currentForm.querySelector('[name="productId"]').value;
+  
+          // Realiza una solicitud AJAX al servidor
+          addToCart(productId);
+        });
+      });
+    });
+  
+    async function addToCart(productId) {
+      try {
+
+        // Realiza una solicitud a la URL '/addToCart/' seguida del productId proporcionado
+        // Utiliza el método POST para enviar datos al servidor
+        // Incluye la información del encabezado indicando que se está enviando JSON
+        const response = await fetch(`/addToCart/${productId}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+  
+        // La solicitud ha sido realizada con éxito, y la respuesta está almacenada en la variable 'response'
+        const data = await response.json();
+        console.log(data);
+  
+        // Puedes agregar lógica adicional aquí, como actualizar la UI si es necesario
+  
+      } catch (error) {
+        console.error('Error al agregar producto al carrito:', error);
+      }
+    }
+  </script>
+  
+    
+
+    <%- include('./partials/footer.ejs') %> 
+</body>
+
+
+</html>

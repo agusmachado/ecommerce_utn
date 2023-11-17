@@ -266,7 +266,34 @@ const eliminarProductoCarrito = async (req, res) => {
   }
 
 
+/* --- OBTENER PRODUCTOS EN GRACIAS ---- */
 
+const obtenerProductosGracias = async (req, res) => {
+    try {
+         // Paginación: Obtener productos para la página actual
+        let perPage = 8;
+        let page = req.params.page || 1;
+
+        const products = await Product
+            .find({})
+            .skip((perPage * page) - perPage)
+            .limit(perPage)
+            .exec();
+        // Obtener el número total de productos para la paginación
+        const count = await Product.countDocuments(); 
+
+        // Renderizar la página 'home' con los productos y detalles de paginación
+        res.render('gracias', {
+            products,
+            user: req.user,
+            current: page,
+            pages: Math.ceil(count / perPage)
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al cargar la página');
+    }
+};
 
 
 
@@ -278,5 +305,6 @@ module.exports = {
     filtroGeneral,
     paginaCarrito,
     agregarProductoCarrito,
-    eliminarProductoCarrito
+    eliminarProductoCarrito,
+    obtenerProductosGracias
 }
