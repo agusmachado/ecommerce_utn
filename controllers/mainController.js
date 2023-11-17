@@ -26,6 +26,7 @@ const queryRangoPrecios = (range) => {
 
 const obtenerProductosHome = async (req, res) => {
     try {
+         // Paginación: Obtener productos para la página actual
         let perPage = 8;
         let page = req.params.page || 1;
 
@@ -34,9 +35,10 @@ const obtenerProductosHome = async (req, res) => {
             .skip((perPage * page) - perPage)
             .limit(perPage)
             .exec();
+        // Obtener el número total de productos para la paginación
+        const count = await Product.countDocuments(); 
 
-        const count = await Product.countDocuments(); // Obtener el número total de productos
-
+        // Renderizar la página 'home' con los productos y detalles de paginación
         res.render('home', {
             products,
             user: req.user,
@@ -53,14 +55,19 @@ const obtenerProductosHome = async (req, res) => {
 
 const obtenerProductoPorId = async (req, res) => {
     try {
+        // Obtener el ID del producto desde los parámetros de la solicitud
         const productId = req.params.productId;
+
+        // Buscar el producto por su ID
         const product = await Product.findById(productId)
 
+        // Si el producto no existe, devolver un error 404
         if (!product) {
             res.status(404).send('Producto no encontrado')
             return;
         }
 
+        // Renderizar la página 'producto' con los detalles del producto
         res.render('producto', { product, user: req.user })
     } catch (error) {
         console.error(error);
@@ -71,9 +78,11 @@ const obtenerProductoPorId = async (req, res) => {
 /* --- MOSTRAR Y BUSCAR PRODUCTOS POR PALABRA CLAVE ---- */
 
 const buscador = async (req, res) => {
+    // Obtener la palabra clave desde los parámetros de la solicitud
     const keyword = req.query.keyword;
     console.log(keyword)
     try {
+        // Buscar productos que coincidan con la palabra clave en nombre, descripción y empresa
         const products = await Product.find({
             $or: [
                 { name: { $regex: keyword, $options: 'i' } },
@@ -81,6 +90,8 @@ const buscador = async (req, res) => {
                 { company: { $regex: keyword, $options: 'i' } },
             ],
         });
+
+        // Renderizar la página 'productos' con los resultados de la búsqueda
         res.render('productos', { 
             products,
             user: req.user,
@@ -94,9 +105,11 @@ const buscador = async (req, res) => {
 // ------------------- MOSTRAR Y BUSCAR POR FILTRO ------------------- //
 
 const filtroPrecios = async (req, res) => {
+    // Establecer valores predeterminados para el rango de precios
     let minPrice = 0;
     let maxPrice = Number.POSITIVE_INFINITY;
 
+    // Actualizar valores si se proporcionan en los parámetros de la solicitud
     if (req.query.minPrice) {
         minPrice = parseFloat(req.query.minPrice);
     }
@@ -105,9 +118,11 @@ const filtroPrecios = async (req, res) => {
     }
 
     try {
+        // Filtrar productos por rango de precios
         const products = await Product.find({
             price: { $gte: minPrice, $lte: maxPrice }
         });
+        // Renderizar la página 'productos' con los resultados del filtro por precios
         res.render('productos', { 
             products,
             user: req.user,
@@ -119,11 +134,13 @@ const filtroPrecios = async (req, res) => {
 
 
 const filtroGeneral = async (req, res) => {
+    // Obtener valores de los parámetros de la solicitud
     const keyword = req.query.keyword;
     const priceRange = req.query.priceRange;
     const company = req.query.company;
 
     try {
+        // Construir la consulta con opciones de filtro
         let query = {
             $or: [
                 { name: { $regex: keyword, $options: 'i' } },
@@ -131,15 +148,20 @@ const filtroGeneral = async (req, res) => {
             ],
         };
 
+        // Agregar filtro por rango de precios si se proporciona
         if (priceRange) {
             query.price = queryRangoPrecios(priceRange);
         }
 
+        // Agregar filtro por empresa si se proporciona
         if (company) {
             query.company = company;
         }
 
+        // Buscar productos según la consulta construida
         const products = await Product.find(query);
+
+        // Renderizar la página 'productos' con los resultados del filtro general
         res.render('productos', { 
             products,
             user: req.user,
@@ -155,10 +177,10 @@ const filtroGeneral = async (req, res) => {
 const paginaCarrito = async (req, res) => {
     try {
       // Aquí puedes obtener los productos en el carrito desde la base de datos
-      // Por ejemplo, si estás utilizando el modelo Cart:
       const cartItems = await Cart.find();
   
-      res.render('cart', { cartItems, user: req.user }); // Renderiza la página del carrito con los productos
+      // Renderizar la página 'cart' con los productos en el carrito
+      res.render('cart', { cartItems, user: req.user }); 
     } catch (error) {
       console.error(error);
       res.status(500).json({ mensaje: 'Error en el servidor' });
@@ -169,15 +191,19 @@ const paginaCarrito = async (req, res) => {
 // ------------------- AGREGAR UN PRODUCTO AL CARRITO ------------------- //
 
 const agregarProductoCarrito = async (req, res) => {
+    // Obtener el ID del producto desde los parámetros de la solicitud
     const productId = req.params.productId;
     console.log(productId)
     try {
+        // Buscar el producto por su ID
         const product = await Product.findById(productId);
   
+        // Si el producto no existe, devolver un error 404
         if (!product) {
             return res.status(404).json({ mensaje: "Producto no encontrado" });
         }
   
+        // Crear un nuevo producto en el carrito con detalles del producto
         const newProductInCart = new Cart({
             name: product.name,
             img: product.img,
@@ -185,6 +211,7 @@ const agregarProductoCarrito = async (req, res) => {
             amount: 1,
         });
   
+        // Guardar el nuevo producto en el carrito en la base de datos
         await newProductInCart.save();
   
         // Obtén todos los productos en el carrito (aquí debes tener lógica según tu modelo)
@@ -214,8 +241,8 @@ const agregarProductoCarrito = async (req, res) => {
 // ------------------- ELIMINAR UN PRODUCTO DEL CARRITO ------------------- //
 
 const eliminarProductoCarrito = async (req, res) => {
+    // Obtener el ID del producto desde los parámetros de la solicitud
     const productId = req.params.productId;
-    console.log(productId);
   
     try {
       // Elimina el producto del carrito utilizando el ID
