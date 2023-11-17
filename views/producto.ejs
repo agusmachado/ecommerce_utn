@@ -141,18 +141,18 @@
   
     async function addToCart(productId) {
       try {
+
+        // Realiza una solicitud a la URL '/addToCart/' seguida del productId proporcionado
+        // Utiliza el método POST para enviar datos al servidor
+        // Incluye la información del encabezado indicando que se está enviando JSON
         const response = await fetch(`/addToCart/${productId}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-        });
-  
+        });  
         const data = await response.json();
-        console.log(data);
-  
-        // Puedes agregar lógica adicional aquí, como actualizar la UI si es necesario
-  
+        console.log(data); 
       } catch (error) {
         console.error('Error al agregar producto al carrito:', error);
       }
