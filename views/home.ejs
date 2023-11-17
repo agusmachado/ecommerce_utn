@@ -358,13 +358,19 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+        // Obtén una referencia al formulario de búsqueda por precio
          const form = document.getElementById('priceSearchForm');
-         
+         // Selecciona todos los botones en el formulario con atributos data-min y data-max
          form.querySelectorAll('button[data-min][data-max]').forEach(button => {
-             button.addEventListener('click', () => {
-                 form.querySelector('input[name="minPrice"]').value = button.dataset.min;
-                 form.querySelector('input[name="maxPrice"]').value = button.dataset.max;
-                 form.submit();
+            // Agrega un evento de clic a cada botón 
+            button.addEventListener('click', () => {
+                // Cuando se hace clic en un botón, establece el valor mínimo del precio en el formulario
+                form.querySelector('input[name="minPrice"]').value = button.dataset.min;
+                
+                // Establece el valor máximo del precio en el formulario
+                form.querySelector('input[name="maxPrice"]').value = button.dataset.max;
+
+                form.submit();
              });
          });
      });
@@ -374,7 +380,7 @@
 <script>
     // Espera a que el DOM esté completamente cargado
     document.addEventListener("DOMContentLoaded", function () {
-      // Obtén todos los botones con la clase 'addToCartButton'
+      // Obtengo todos los botones con la clase 'addToCartButton'
       const addToCartButtons = document.querySelectorAll('.addToCartButton');
   
       // Itera sobre cada botón
@@ -395,6 +401,10 @@
   
     async function addToCart(productId) {
       try {
+
+        // Realiza una solicitud a la URL '/addToCart/' seguida del productId proporcionado
+        // Utiliza el método POST para enviar datos al servidor
+        // Incluye la información del encabezado indicando que se está enviando JSON
         const response = await fetch(`/addToCart/${productId}`, {
           method: 'POST',
           headers: {
@@ -402,6 +412,7 @@
           },
         });
   
+        // La solicitud ha sido realizada con éxito, y la respuesta está almacenada en la variable 'response'
         const data = await response.json();
         console.log(data);
   
